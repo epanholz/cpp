@@ -8,7 +8,7 @@ FLAGS := -Wall -Wextra -Werror
 
 SRC := megaphone.cpp
 
-OBJ := megaphone.o
+OBJ := $(SRC:.cpp=.o)
 
 all: $(NAME)
 

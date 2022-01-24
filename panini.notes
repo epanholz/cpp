@@ -1,0 +1,61 @@
+
+
+== basic syntax ==
+
+--> Object
+Objects have states and behaviors. Example: A dog has states - color, 
+name, breed as well as behaviors - wagging, barking, eating. An object 
+is an instance of a class.
+
+--> Class
+A class can be defined as a template/blueprint that describes the 
+behaviors/states that object of its type support.
+
+--> Methods
+A method is basically a behavior. A class can contain many methods. 
+It is in methods where the logics are written, data is manipulated 
+and all the actions are executed.
+
+--> Instance Variables
+Each object has its unique set of instance variables. An object's 
+state is created by the values assigned to these instance variables.
+
+== namespace ==
+
+A namespace is a declarative region that provides a scope to the 
+identifiers (the names of types, functions, variables, etc) inside it. 
+Namespaces are used to organize code into logical groups and to 
+prevent name collisions that can occur especially when your code base 
+includes multiple libraries. 
+
+--> not allowed
+
+
+== forbiden stuff ==
+
+*alloc
+*printf
+free
+namespaces
+
+   char s[30];
+   int i;
+   //display a message to user to enter the string
+   cout<<"Enter the String in lowercase: "; 
+   //storing the string into the char array 
+   cin>>s;
+
+   /* running the loop from 0 to the length of the string
+    * to convert each individual char of string to uppercase
+    * by subtracting 32 from the ASCII value of each char
+    */
+   for(i=0;i<=strlen(s);i++) { 
+      /* Here we are performing a check so that only lowercase 
+       * characters gets converted into uppercase. 
+       * ASCII value of a to z(lowercase chars) ranges from 97 to 122 
+       */ 
+      if(s[i]>=97 && s[i]<=122)
+      {
+		s[i]=s[i]-32;
+      }
+   }
