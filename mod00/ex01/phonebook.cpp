@@ -1,28 +1,5 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <iomanip>
-#include <stdio.h>
-#include <stdlib.h>
 
-class Phonebook
-{
-    // Access specifier
-    public:
- 
-    // Data Members
-   	std::string first_name;
-	std::string last_name;
-	std::string nick_name;
-	std::string phone_number;
-	std::string darkest_secret;
- 
-    // Member Functions()
-
-	// accessing member function
-    //test.printname();
-};
-
+#include "phonebook.h"
 
 void	ft_add(Phonebook contacts[], int size)
 {
@@ -45,31 +22,41 @@ void	ft_add(Phonebook contacts[], int size)
 
 void	ft_search(Phonebook contacts[], int size)
 {
-	const char separator = ' ';
-    const int width	= 10;
+	int index;
+	std::string input;
 
-	if (size == 0)
-		std::cout << "Phonebook is empty\n";
 	for (int i = 0; i < size; i++)
+		print_phonebook(contacts, i);
+	std::cout << "\033[0;34m" << "Please enter the index you are looking for: " << "\033[0m";
+	std::getline (std::cin, input);
+	if(isNumber(input) == false || input.compare("0") == 0)
 	{
-		std::cout << "\033[33m" << std::right << std::setw(width) << std::setfill(separator) << i+1 << "|";
-		std::cout << std::right << std::setw(width) << std::setfill(separator) << contacts[i].first_name << "|";
-		std::cout << std::right << std::setw(width) << std::setfill(separator) << contacts[i].last_name << "|";
-		std::cout << std::right << std::setw(width) << std::setfill(separator) << contacts[i].nick_name;
-		std::cout << "\n" << "\033[0m";
+		std::cout << "Invalid index\n";
+		return ;
+	}
+	index = stoi(input);
+	if (index > size)
+	{
+		std::cout << "Invalid index\n";
+		return ;
+	}
+	for (int j = 0; j < size; j++)
+	{
+		if ((index-1) == j)
+		{
+			contacts[j].print_contact();
+			return ;
+		}
 	}
 }
 
 int	main(void)
 {
-    // Declare an object of class geeks
-    //Phonebook test;
 	Phonebook contacts[7];
 	std::string input;
 	int i = 0;
 	int j = 0;
-    // accessing data member
-    //test.first_name = "Zino";
+
 	while (i == 0)
 	{
 		std::cout << "\033[35m" << "Please enter a command: " << "\033[0m";
@@ -83,20 +70,12 @@ int	main(void)
 				j++;
 		}
 		else if (input.compare("SEARCH") == 0)
+		{
+		if (j == 0)
+			std::cout << "\033[0;34m" << "Phonebook is empty\n" << "\033[0m";
+		else
 			ft_search(contacts, j);
+		}
 	}
 	return 0;
 }
-
-/*
-Welcome to the 80s and its unbelievable technology! Write a program that behaves
-like a crappy awesome phonebook software. Please take some time to give your exe-
-cutable a relevant name. When the program starts, the user is prompted for input: 
-youshould accept the ADD command, the SEARCH command or the EXIT command. 
-Any otherinput is discarded.
-The program starts empty (no contacts), doesn’t use any dynamic allocation, and
-can’t store more than 8 contacts. If a ninth contact is added, replace the oldest 
-contact.
-
-only 8 contacts
-*/

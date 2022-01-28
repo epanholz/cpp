@@ -4,9 +4,11 @@ RES = \033[0m
 
 NAME := phonebook
 
+INC := phonebook.h
+
 FLAGS := -Wall -Wextra -Werror
 
-SRC := phonebook.cpp
+SRC := phonebook.cpp phonebook_utils.cpp
 
 OBJ := $(SRC:.cpp=.o)
 
