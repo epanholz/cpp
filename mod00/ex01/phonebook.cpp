@@ -4,9 +4,9 @@
 void	ft_add(Phonebook contacts[], int size)
 {
 	int pos = size;
+
 	if (pos > 8)
 		pos = 7;
-	//std::cout << "\e[1;1H\e[2J";
 	std::cout << "\033[36m" << "Please, enter the contacts first name: " << "\033[0m";
 	std::getline (std::cin,contacts[pos].first_name);
 	std::cout << "\033[36m" << "Please, enter the contacts last name: " << "\033[0m";
@@ -17,7 +17,6 @@ void	ft_add(Phonebook contacts[], int size)
 	std::getline (std::cin,contacts[pos].phone_number);
 	std::cout << "\033[36m" << "Please, enter the contacts darkest secret: " << "\033[0m";
 	std::getline (std::cin,contacts[pos].darkest_secret);
-	//std::cout << "Hello, " << contacts[pos].first_name << "!\n";
 }
 
 void	ft_search(Phonebook contacts[], int size)
@@ -25,9 +24,10 @@ void	ft_search(Phonebook contacts[], int size)
 	int index;
 	std::string input;
 
+	print_header();
 	for (int i = 0; i < size; i++)
-		print_phonebook(contacts, i);
-	std::cout << "\033[0;34m" << "Please enter the index you are looking for: " << "\033[0m";
+		contacts[i].print_index(i+1);
+	std::cout << "\n" << "\033[0;34m" << "Please enter the index you are looking for: " << "\033[0m";
 	std::getline (std::cin, input);
 	if(isNumber(input) == false || input.compare("0") == 0)
 	{
@@ -57,6 +57,7 @@ int	main(void)
 	int i = 0;
 	int j = 0;
 
+	std::cout << "\e[1;1H\e[2J";
 	while (i == 0)
 	{
 		std::cout << "\033[35m" << "Please enter a command: " << "\033[0m";

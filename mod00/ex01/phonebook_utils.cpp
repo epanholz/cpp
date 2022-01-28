@@ -8,11 +8,12 @@ bool isNumber(const std::string str)
     return true;
 }
 
-void	print_phonebook(Phonebook contacts[], int i)
+void	print_header()
 {
-	std::cout << "\033[33m" << std::right << std::setw(10) << std::setfill(' ') << i+1 << "|";
-	std::cout << std::right << std::setw(10) << std::setfill(' ') << contacts[i].first_name.substr(0,10) << "|";
-	std::cout << std::right << std::setw(10) << std::setfill(' ') << contacts[i].last_name.substr(0,10) << "|";
-	std::cout << std::right << std::setw(10) << std::setfill(' ') << contacts[i].nick_name.substr(0,10);
+	std::cout << "\033[33m" << "\n";
+	std::cout << std::right << std::setw(10) << std::setfill(' ') << "INDEX" << "|";
+	std::cout << std::right << std::setw(10) << std::setfill(' ') << "FIRSTNAME" << "|";
+	std::cout << std::right << std::setw(10) << std::setfill(' ') << "LASTNAME" << "|";
+	std::cout << std::right << std::setw(10) << std::setfill(' ') << "NICKNAME";
 	std::cout << "\n" << "\033[0m";
 }
