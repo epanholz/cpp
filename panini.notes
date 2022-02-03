@@ -52,6 +52,8 @@ state is created by the values assigned to these instance variables.
 
 == public vs private ==
 
+https://stackoverflow.com/questions/4505938/when-why-to-make-function-private-in-class
+
 --> public
 All the class members declared under public will be available 
 to everyone. The data members and member functions declared public can 
