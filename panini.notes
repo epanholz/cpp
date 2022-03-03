@@ -1,4 +1,8 @@
 
+== codam stuffs ==
+only funtcion templates in the header and function implemantation in a 
+seperate .cpp file just like in the account exercise.
+
 == difference to c ==
 
 C is a procedural programming language and does not support classes and 

@@ -4,9 +4,9 @@ RES = \033[0m
 
 NAME := phonebook
 
-INC := phonebook.h
+INC := phonebook.hpp
 
-FLAGS := -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror -pedantic -std=c++11
 
 SRC := phonebook.cpp phonebook_utils.cpp
 

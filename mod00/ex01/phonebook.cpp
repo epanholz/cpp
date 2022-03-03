@@ -1,5 +1,5 @@
 
-#include "phonebook.h"
+#include "phonebook.hpp"
 
 void	ft_add(Phonebook contacts[], int size)
 {
@@ -57,7 +57,6 @@ int	main(void)
 	int i = 0;
 	int j = 0;
 
-	std::cout << "\e[1;1H\e[2J";
 	while (i == 0)
 	{
 		std::cout << "\033[35m" << "Please enter a command: " << "\033[0m";

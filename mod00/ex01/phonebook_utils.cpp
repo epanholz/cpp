@@ -1,9 +1,9 @@
 
-#include "phonebook.h"
+#include "phonebook.hpp"
 
 bool isNumber(const std::string str)
 {
-    for (size_t i = 0; i < std::strlen(str.c_str()); i++)
+    for (size_t i = 0; i < str.length(); i++)
         if (std::isdigit(str[i]) == 0) return false;
     return true;
 }
