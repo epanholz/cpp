@@ -8,7 +8,7 @@ INC := phonebook.hpp
 
 FLAGS := -Wall -Wextra -Werror -pedantic -std=c++11
 
-SRC := phonebook.cpp phonebook_utils.cpp
+SRC := main.cpp phonebook.cpp contact.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

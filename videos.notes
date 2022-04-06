@@ -1,0 +1,15 @@
+== NAMESPACES ==
+
+We can define functions and variables with the same name thanks to namespaces.
+
+namespace owo{
+	int panini = 1;
+}
+
+namespace uwu{
+	int panini = 5;
+}
+
+We can just acces them like this (with the scope resolution operator):
+uwu::panini 
+owo::panini
