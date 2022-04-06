@@ -5,6 +5,10 @@ only funtcion templates in the header and function
 implemantation in a seperate .cpp file just like in 
 the account exercise.
 
+== allowed headers ==
+
+https://en.cppreference.com/w/cpp/header
+
 == forbiden stuff ==
 
 *alloc

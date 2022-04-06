@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cctype>
 
 int main(int argc, char **argv) 
 {
@@ -13,11 +14,11 @@ int main(int argc, char **argv)
 			{
 				c =  argv[i][j];
 				if(c >=97 && c<=122)
-					c = c - 32;
+					c = toupper(c);
 				std::cout << c;
 			}
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
