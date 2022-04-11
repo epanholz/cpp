@@ -5,6 +5,16 @@ only funtcion templates in the header and function
 implemantation in a seperate .cpp file just like in 
 the account exercise.
 
+
+NEW OPERATOR
+The new operator is an operator which denotes a request 
+for memory allocation on the Heap. The constructor of the
+class is invoked to properly initialize this memory.
+
+For dynamic initialization new keyword require non parameterized 
+constructor if we add a parameterized constructor. So we will 
+use a dummy constructor for it
+
 == allowed headers ==
 
 https://en.cppreference.com/w/cpp/header
