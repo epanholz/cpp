@@ -2,7 +2,6 @@
 
 Zombie::Zombie(){};
 
-
 Zombie::~Zombie()
 {
 	std::cout << Zombie::_name << " has died." << std::endl;
