@@ -5,7 +5,6 @@ only funtcion templates in the header and function
 implemantation in a seperate .cpp file just like in 
 the account exercise.
 
-
 NEW OPERATOR
 The new operator is an operator which denotes a request 
 for memory allocation on the Heap. The constructor of the
@@ -14,6 +13,14 @@ class is invoked to properly initialize this memory.
 For dynamic initialization new keyword require non parameterized 
 constructor if we add a parameterized constructor. So we will 
 use a dummy constructor for it
+
+FUNCTION POINTER
+handy website
+http://www.newty.de/fpt/fpt.html#defi
+
+- One indirect function call is more expensive than one if condition.
+- Several if conditions are more expensive than an indirect function call.
+
 
 == allowed headers ==
 
