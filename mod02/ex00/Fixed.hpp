@@ -17,7 +17,7 @@ public:
 
 
 private:
-	int					fixed_point_number;
+	int					int_part;
 	static const int	fract_bits;
 
 };
