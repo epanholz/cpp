@@ -6,38 +6,45 @@
 
 class Fixed {
 
-public:
+public: /* constructors deconstructors */
 	Fixed();
 	Fixed(const int value);
 	Fixed(const float value);
 	Fixed(const Fixed &obj);
 	Fixed& operator=(const Fixed &obj);
-
 	~Fixed();
 
-public:
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
-	float	toFloat(void) const;
-	int		toInt(void) const;
-	bool	operator<(const Fixed& obj);
-	bool	operator>(const Fixed& obj);
-	bool	operator>=(const Fixed& obj);
-	bool	operator<=(const Fixed& obj);
-	bool	operator==(const Fixed& obj);
-	bool	operator!=(const Fixed& obj);
-	Fixed&	operator++(void);
-	Fixed	operator++(int);
-	Fixed&	operator--(void);
-	Fixed	operator--(int);
-	Fixed&	operator+(const Fixed& obj);
-	Fixed&	operator-(const Fixed& obj);
-	Fixed&	operator*(const Fixed& obj);
-	Fixed&	operator/(const Fixed& obj);
-	Fixed&	min(const Fixed& obj1, const Fixed& obj2);
-	Fixed&	min(Fixed& obj1, Fixed& obj2);
-	Fixed&	max(Fixed& obj1, Fixed& obj2);
-	Fixed&	max(const Fixed& obj1, const Fixed& obj2);
+public: /* set fixed number */
+	int				getRawBits(void) const;
+	void			setRawBits(int const raw);
+	float			toFloat(void) const;
+	int				toInt(void) const;
+
+public: /* comparsion operators */
+	bool			operator<(const Fixed& obj);
+	bool			operator>(const Fixed& obj);
+	bool			operator>=(const Fixed& obj);
+	bool			operator<=(const Fixed& obj);
+	bool			operator==(const Fixed& obj);
+	bool			operator!=(const Fixed& obj);
+
+public: /* decrement and increment operators */
+	Fixed&			operator++(void);
+	Fixed			operator++(int);
+	Fixed&			operator--(void);
+	Fixed			operator--(int);
+
+public: /* simple math operators */
+	Fixed&			operator+(const Fixed& obj);
+	Fixed&			operator-(const Fixed& obj);
+	Fixed&			operator*(const Fixed& obj);
+	Fixed&			operator/(const Fixed& obj);
+
+public: /* min max member functions */
+	static Fixed&	min(const Fixed& obj1, const Fixed& obj2);
+	static Fixed&	min(Fixed& obj1, Fixed& obj2);
+	static Fixed&	max(const Fixed& obj1, const Fixed& obj2);
+	static Fixed&	max(Fixed& obj1, Fixed& obj2);
 
 private:
 	int					int_part;
