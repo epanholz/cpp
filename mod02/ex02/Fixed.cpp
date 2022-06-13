@@ -7,26 +7,26 @@ const int Fixed::fract_bits = 8;
 
 Fixed::Fixed()
 	: int_part(0) {
-	std::cout << "Default constructor called :3" << std::endl;
+	//std::cout << "Default constructor called :3" << std::endl;
 }
 
 Fixed::Fixed(const int value) {
+	//std::cout << "Int constructor called" << std::endl;
 	this->int_part = value * (1 << this->fract_bits);
-	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float value){
+	//std::cout << "Flaot constructor called" << std::endl;
 	this->int_part = roundf(value * (1 << this->fract_bits));
-	std::cout << "Flaot constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &obj){
-	std::cout << "Copy constructor called :D" << std::endl;
+	//std::cout << "Copy constructor called :D" << std::endl;
 	this->int_part = obj.int_part;
 }
 
 Fixed::~Fixed(){
-	std::cout << "Deconstructor called :x" << std::endl;
+	//std::cout << "Deconstructor called :x" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &obj){
@@ -38,13 +38,13 @@ Fixed& Fixed::operator=(const Fixed &obj){
 /* set fixed number */
 
 int		Fixed::getRawBits( void ) const{
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->int_part);
 }
 
 void	Fixed::setRawBits( int const raw){
+	//std::cout << "setRawBits member function called" << std::endl;
 	this->int_part = raw;
-	std::cout << "setRawBits member function called" << std::endl;
 }
 
 float	Fixed::toFloat(void) const{
@@ -86,6 +86,7 @@ bool	Fixed::operator!=(const Fixed& obj){
 // prefix increment
 Fixed&	Fixed::operator++(void){
 	// actual increment takes place here
+	this->int_part++;
     return *this; // return new value by reference
 }
 
@@ -99,6 +100,7 @@ Fixed	Fixed::operator++(int){
 // prefix increment
 Fixed&	Fixed::operator--(void){
 	// actual decrement takes place here;
+	this->int_part--;
 	return *this; // return new value by reference
 }
 
@@ -108,6 +110,30 @@ Fixed	Fixed::operator--(int){
 	operator--(); // prefix decrement
 	return old; //return old value
 }
+
+/* simple math operators */
+
+Fixed&	Fixed::operator+(const Fixed& obj){
+	this->int_part += obj.int_part;
+	return *this;
+}
+
+Fixed&	Fixed::operator-(const Fixed& obj){
+	this->int_part -= obj.int_part;
+	return *this;
+}
+
+Fixed&	Fixed::operator*(const Fixed& obj){
+	this->int_part = (static_cast<int64_t>(this->int_part) * static_cast<int64_t>(obj.int_part)) / (1 << fract_bits);
+	return *this;
+}
+
+Fixed& Fixed::operator/(const Fixed& obj){
+	this->int_part = (static_cast<int64_t>(this->int_part) * (1 << fract_bits)) / obj.int_part;
+	return *this;
+}
+
+/* min max member funcionts */
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
