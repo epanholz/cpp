@@ -20,13 +20,13 @@ public: /* set fixed number */
 	float			toFloat(void) const;
 	int				toInt(void) const;
 
-public: /* comparsion operators */
-	bool			operator<(const Fixed& obj);
-	bool			operator>(const Fixed& obj);
-	bool			operator>=(const Fixed& obj);
-	bool			operator<=(const Fixed& obj);
-	bool			operator==(const Fixed& obj);
-	bool			operator!=(const Fixed& obj);
+public: /* comparsion operator, they are const to be read only*/
+	bool			operator<(const Fixed& obj) const;
+	bool			operator>(const Fixed& obj) const;
+	bool			operator>=(const Fixed& obj) const;
+	bool			operator<=(const Fixed& obj) const;
+	bool			operator==(const Fixed& obj) const;
+	bool			operator!=(const Fixed& obj) const;
 
 public: /* decrement and increment operators */
 	Fixed&			operator++(void);
@@ -41,10 +41,10 @@ public: /* simple math operators */
 	Fixed&			operator/(const Fixed& obj);
 
 public: /* min max member functions */
-	static Fixed&	min(const Fixed& obj1, const Fixed& obj2);
-	static Fixed&	min(Fixed& obj1, Fixed& obj2);
-	static Fixed&	max(const Fixed& obj1, const Fixed& obj2);
-	static Fixed&	max(Fixed& obj1, Fixed& obj2);
+	const static Fixed&	min(const Fixed& obj1, const Fixed& obj2);
+	static Fixed&		min(Fixed& obj1, Fixed& obj2);
+	const static Fixed&	max(const Fixed& obj1, const Fixed& obj2);
+	static Fixed&		max(Fixed& obj1, Fixed& obj2);
 
 private:
 	int					int_part;

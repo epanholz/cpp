@@ -135,6 +135,22 @@ Fixed& Fixed::operator/(const Fixed& obj){
 
 /* min max member funcionts */
 
+const Fixed& Fixed::min(const Fixed& obj1, const Fixed& obj2){
+	return(obj1 < obj2 ? obj1 : obj2);
+}
+
+Fixed& Fixed::min(Fixed& obj1, Fixed& obj2){
+	return(obj1 < obj2 ? obj1 : obj2);
+}
+
+const Fixed& Fixed::max(const Fixed& obj1, const Fixed& obj2){
+	return(obj1 > obj2 ? obj1 : obj2);
+}
+
+Fixed& Fixed::max(Fixed& obj1, Fixed& obj2){
+	return(obj1 > obj2 ? obj1 : obj2);
+}
+
 std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
     // write obj to stream
