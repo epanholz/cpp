@@ -3,6 +3,9 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 	std::cout << "ScavTrap default constructor called :x" << std::endl;
 }
 

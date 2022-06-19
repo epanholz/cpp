@@ -12,5 +12,6 @@ int	main(void) {
 	a.beRepaired(10);
 	b.highFiveGuys();
 	b.attack("Scavy");
+	b.highFiveGuys();
 	return 0;
 }
