@@ -2,7 +2,7 @@
 #include "ClapTrap.hpp"
 
 int	main(void) {
-	ClapTrap	a("Fragtrap");	
+	ClapTrap	a("Clapy");	
 	ClapTrap	b("Ninja Assassin Claptrap");
 	a.attack("Ninja Assassin Claptrap");
 	b.takeDamage(0);
