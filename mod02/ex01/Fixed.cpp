@@ -3,6 +3,8 @@
 
 const int Fixed::fract_bits = 8;
 
+/* constructors deconstructors */
+
 Fixed::Fixed()
 	: int_part(0) {
 	std::cout << "Default constructor called :3" << std::endl;
@@ -33,11 +35,7 @@ Fixed& Fixed::operator=(const Fixed &obj){
 	return (*this);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj)
-{
-    // write obj to stream
-    return os << obj.toFloat();
-}
+/* setter and getter  */
 
 int		Fixed::getRawBits( void ) const{
 	std::cout << "getRawBits member function called" << std::endl;
@@ -49,10 +47,18 @@ void	Fixed::setRawBits( int const raw){
 	std::cout << "setRawBits member function called" << std::endl;
 }
 
+/* conversion */
+
 float	Fixed::toFloat(void) const{
 	return(static_cast<float>(this->int_part) / (1 << this->fract_bits));
 }
 
 int		Fixed::toInt(void) const{
 	return(static_cast<int>(this->int_part) / (1 << this->fract_bits));
+}
+
+/* write to os stream */
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj){
+    return os << obj.toFloat();
 }

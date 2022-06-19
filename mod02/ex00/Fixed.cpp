@@ -3,6 +3,8 @@
 
 const int Fixed::fract_bits = 8;
 
+/* constructors and deconstructors */
+
 Fixed::Fixed()
 	: int_part(0) {
 	std::cout << "Default constructor called :3" << std::endl;
@@ -22,6 +24,8 @@ Fixed& Fixed::operator=(const Fixed &old_obj){
 	this->int_part = old_obj.int_part;
 	return (*this);
 }
+
+/* setter and getter */
 
 int		Fixed::getRawBits( void ) const{
 	std::cout << "getRawBits member function called" << std::endl;

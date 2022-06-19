@@ -30,22 +30,22 @@ Fixed::~Fixed(){
 }
 
 Fixed& Fixed::operator=(const Fixed &obj){
-	std::cout << "Copy assignment operator called ^-^" << std::endl;
+	//std::cout << "Copy assignment operator called ^-^" << std::endl;
 	this->int_part = obj.int_part;
 	return (*this);
 }
 
-/* set fixed number */
+/* setter and getter  */
 
 int		Fixed::getRawBits( void ) const{
-	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->int_part);
 }
 
 void	Fixed::setRawBits( int const raw){
-	//std::cout << "setRawBits member function called" << std::endl;
 	this->int_part = raw;
 }
+
+/* conversion */
 
 float	Fixed::toFloat(void) const{
 	return(static_cast<float>(this->int_part) / (1 << this->fract_bits));
@@ -55,29 +55,29 @@ int		Fixed::toInt(void) const{
 	return(static_cast<int>(this->int_part) / (1 << this->fract_bits));
 }
 
-bool	Fixed::operator<(const Fixed& obj){
+/* comparsion operators  */
+
+bool	Fixed::operator<(const Fixed& obj) const{
 	return(this->int_part < obj.int_part);
 }
 
-/* comparsion operators  */
-
-bool	Fixed::operator>(const Fixed& obj){
+bool	Fixed::operator>(const Fixed& obj) const{
 	return(this->int_part > obj.int_part);
 }
 
-bool	Fixed::operator<=(const Fixed& obj){
+bool	Fixed::operator<=(const Fixed& obj) const{
 	return(this->int_part <= obj.int_part);
 }
 
-bool	Fixed::operator>=(const Fixed& obj){
+bool	Fixed::operator>=(const Fixed& obj) const{
 	return(this->int_part >= obj.int_part);
 }
 
-bool	Fixed::operator==(const Fixed& obj){
+bool	Fixed::operator==(const Fixed& obj) const{
 	return(this->int_part == obj.int_part);
 }
 
-bool	Fixed::operator!=(const Fixed& obj){
+bool	Fixed::operator!=(const Fixed& obj) const{
 	return(this->int_part != obj.int_part);
 }
 
@@ -85,7 +85,6 @@ bool	Fixed::operator!=(const Fixed& obj){
 
 // prefix increment
 Fixed&	Fixed::operator++(void){
-	// actual increment takes place here
 	this->int_part++;
     return *this; // return new value by reference
 }
@@ -99,7 +98,6 @@ Fixed	Fixed::operator++(int){
 
 // prefix increment
 Fixed&	Fixed::operator--(void){
-	// actual decrement takes place here;
 	this->int_part--;
 	return *this; // return new value by reference
 }
@@ -151,8 +149,8 @@ Fixed& Fixed::max(Fixed& obj1, Fixed& obj2){
 	return(obj1 > obj2 ? obj1 : obj2);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj)
-{
-    // write obj to stream
+/* write os stream */
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj){
     return os << obj.toFloat();
 }
