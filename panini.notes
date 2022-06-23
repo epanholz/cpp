@@ -86,3 +86,20 @@ inherits all the properties of the base class, without changing the properties
 of base class and may add new features to its own. These new features in the 
 derived class will not affect the base class. The derived class is the specialized 
 class for the base class.
+
+== shadowing ==
+
+Each block defines its own scope region. So what happens when we have a variable
+inside a nested block that has the same name as a variable in an outer block? When
+this happens, the nested variable “hides” the outer variable in areas where they
+are both in scope. This is called name hiding or shadowing.
+
+== -Wshadow ==
+
+Warn whenever a local variable or type declaration shadows another variable, parameter,
+type, class member (in C++), or instance variable (in Objective-C) or whenever a 
+built-in function is shadowed. Note that in C++, the compiler warns if a local variable 
+shadows an explicit typedef, but not if it shadows a struct/class/enum. If this warning 
+is enabled, it includes also all instances of local shadowing. This means that
+-Wno-shadow=local and -Wno-shadow=compatible-local are ignored when -Wshadow is used. 
+Same as -Wshadow=global.

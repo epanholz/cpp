@@ -11,6 +11,23 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "ClapTrap name constructor called :3" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &old_obj){
+	std::cout << "Copy constructor called :D" << std::endl;
+	this->name = old_obj.name;
+	this->hit_points = old_obj.hit_points;
+	this->energy_points = old_obj.energy_points;
+	this->attack_damage = old_obj.attack_damage;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &old_obj){
+	std::cout << "Copy assignment operator called ^-^" << std::endl;
+	this->name = old_obj.name;
+	this->hit_points = old_obj.hit_points;
+	this->energy_points = old_obj.energy_points;
+	this->attack_damage = old_obj.attack_damage;
+	return (*this);
+}
+
 ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap deconstructor called :3" << std::endl;
 }

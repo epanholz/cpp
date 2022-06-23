@@ -9,6 +9,8 @@ class ClapTrap {
 public: /* constructors and deconstructors */
 	ClapTrap();
 	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &old_obj);
+	ClapTrap& operator=(const ClapTrap &old_obj);
 	~ClapTrap();
 
 public: /* member functions */
