@@ -11,12 +11,12 @@ public: /* constructors and deconstructors */
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &old_obj);
 	ClapTrap& operator=(const ClapTrap &old_obj);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 public: /* member functions */
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	virtual void	attack(const std::string& target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
 
 protected: /* variables */
 	std::string		name;

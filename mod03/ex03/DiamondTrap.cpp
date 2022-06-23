@@ -5,8 +5,9 @@ DiamondTrap::DiamondTrap() {
 	std::cout << "DiamondTrap default constructor called OwO" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name){
-	this->name = name;
+DiamondTrap::DiamondTrap(std::string name)
+	: ClapTrap(name), FragTrap(name), ScavTrap(name), name(name) {
+	ClapTrap::name = name+"_clap_name";
 	this->hit_points = DiamondTrap::FragTrap::hit_points;
 	this->energy_points = DiamondTrap::ScavTrap::energy_points;
 	this->attack_damage = DiamondTrap::FragTrap::attack_damage;
@@ -36,6 +37,10 @@ DiamondTrap::~DiamondTrap(){
 
 /* member functions */
 
+void	DiamondTrap::attack(const std::string& target) {
+	ScavTrap::attack(target);
+}
+
 void	DiamondTrap::whoAmI(){
-	std::cout << "\033[0;36m" << "My name is " << this->name << "\033[0m" << std::endl;
+	std::cout << "\033[0;36m" << "My name is " << this->name << " and my ClapTrap name is " << ClapTrap::name << "\033[0m" << std::endl;
 }

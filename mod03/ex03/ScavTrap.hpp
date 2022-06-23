@@ -8,11 +8,11 @@ public: /* constructors and deconstructors */
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &old_obj);
 	ScavTrap& operator=(const ScavTrap &old_obj);
-	~ScavTrap();
+	virtual ~ScavTrap();
 
 public: /* member functions */
-	void	attack(const std::string& target);
-	void	guardGate();
+	virtual void	attack(const std::string& target);
+	void			guardGate();
 
 private: /* variables */
 

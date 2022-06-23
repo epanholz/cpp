@@ -8,7 +8,7 @@ public: /* constructors and deconstructors */
 	FragTrap(std::string name);
 	FragTrap(const FragTrap &old_obj);
 	FragTrap& operator=(const FragTrap &old_obj);
-	~FragTrap();
+	virtual ~FragTrap();
 
 public: /* member functions */
 	void	highFiveGuys();

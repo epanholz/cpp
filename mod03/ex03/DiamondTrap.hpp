@@ -9,10 +9,11 @@ public: /* constructors and deconstructors */
 	DiamondTrap(std::string name);
 	DiamondTrap(const DiamondTrap &old_obj);
 	DiamondTrap& operator=(const DiamondTrap &old_obj);
-	~DiamondTrap();
+	virtual ~DiamondTrap();
 
 public: /* member functions */
-	void	whoAmI();
+	virtual void	attack(const std::string& target);
+	void			whoAmI();
 
 private: /* variables */
 	std::string name;
