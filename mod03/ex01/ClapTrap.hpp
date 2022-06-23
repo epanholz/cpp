@@ -14,9 +14,9 @@ public: /* constructors and deconstructors */
 	~ClapTrap();
 
 public: /* member functions */
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	virtual void	attack(const std::string& target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
 
 protected: /* variables */
 	std::string		name;
