@@ -2,6 +2,7 @@
 # pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 
@@ -14,6 +15,7 @@ public: /* constructors and deconstructors */
 public: /* member functions */
 	void	makeSound() const;
 
-private: /* variables */
+private: /* attributes */
+	Brain*	brain;
 
 };
