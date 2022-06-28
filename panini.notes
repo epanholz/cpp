@@ -168,3 +168,22 @@ In order to perform Deep copy, we need to explicitly define the copy
 constructor and assign dynamic memory as well, if required. Also, it is 
 required to dynamically allocate memory to the variables in the other 
 constructors, as well.
+
+== Abstract Class ==
+
+Defines an abstract type which cannot be instantiated, but can be used 
+as a base class.
+
+Abstract classes are used to represent general concepts (for example, 
+Shape, Animal), which can be used as base classes for concrete classes 
+(for example, Circle, Dog).
+No objects of an abstract class can be created (except for base subobjects 
+of a class derived from it) and no non-static data members of an abstract 
+class can be declared.
+
+An abstract class is, conceptually, a class that cannot be instantiated 
+and is usually implemented as a class that has one or more pure virtual 
+(abstract) functions.
+A pure virtual function is one which must be overridden by any concrete 
+(i.e., non-abstract) derived class. This is indicated in the declaration 
+with the syntax " = 0" in the member function's declaration.

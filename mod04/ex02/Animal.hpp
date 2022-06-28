@@ -18,7 +18,7 @@ public: /* getter and setter */
 	std::string		getType() const;
 
 public: /* member functions */
-	virtual void	makeSound() const;
+	virtual void	makeSound() const = 0;
 
 protected: /* attributes */
 	std::string type;
