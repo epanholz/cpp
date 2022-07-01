@@ -175,9 +175,6 @@ constructors, as well.
 
 == Abstract Class ==
 
-Defines an abstract type which cannot be instantiated, but can be used 
-as a base class.
-
 Abstract classes are used to represent general concepts (for example, 
 Shape, Animal), which can be used as base classes for concrete classes 
 (for example, Circle, Dog).
@@ -188,6 +185,15 @@ class can be declared.
 An abstract class is, conceptually, a class that cannot be instantiated 
 and is usually implemented as a class that has one or more pure virtual 
 (abstract) functions.
-A pure virtual function is one which must be overridden by any concrete 
-(i.e., non-abstract) derived class. This is indicated in the declaration 
-with the syntax " = 0" in the member function's declaration.
+
+An abstract class is a class that is designed to be specifically used as a 
+base class. An abstract class contains at least one pure virtual function. 
+You declare a pure virtual function by using a pure specifier (= 0) in the 
+declaration of a virtual member function in the class declaration.
+
+== Interfaces in C++ ==
+There are no interfaces in C++, we can only emulate them with abstract classes.
+
+Interface -> C++ class with only pure virtual methods (i.e. without any code)
+Abstract -> C++ class with virtual methods that can be overridden, and some code, 
+but at least one pure virtual method that makes the class not instantiable.

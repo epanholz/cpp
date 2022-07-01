@@ -7,11 +7,11 @@ class Ice : public AMateria {
 
 	public: /* constructors and deconstructors */
 		Ice();
-		Ice(const Ice &old_obj);
+		Ice(const Ice &rhs);
 		virtual ~Ice();
 
 	public: /* copy assignment operator overload */
-		Ice& operator=(const Ice &old_obj);
+		Ice& operator=(const Ice &rhs);
 
 	public: /* getter and setter */
 

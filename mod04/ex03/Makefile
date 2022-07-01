@@ -4,11 +4,11 @@ RES = \033[0m
 
 NAME :=	materia
 
-INC := AMateria.hpp ICharacter.hpp Cure.hpp Ice.hpp IMateriaSource.hpp
+INC := AMateria.hpp ICharacter.hpp Cure.hpp Ice.hpp IMateriaSource.hpp Character.hpp MateriaSource.hpp
 
-FLAGS := -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror -std=c++98
 
-SRC := main.cpp AMateria.cpp ICharacter.cpp Cure.cpp Ice.cpp IMateriaSource.cpp
+SRC := main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

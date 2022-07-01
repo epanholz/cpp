@@ -6,16 +6,20 @@
 # include <string>
 # include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria {
 
 	public: /* constructors and deconstructors */
-		AMateria();
 		AMateria(std::string const &type);
-		AMateria(const AMateria &old_obj);
+		AMateria(const AMateria &rhs);
 		virtual ~AMateria();
 	
+	private: /* constructor to make sure we always use the other one */
+		AMateria();
+	
 	public: /* copy assignment operator overload */
-		AMateria& operator=(const AMateria &old_obj);
+		AMateria& operator=(const AMateria &rhs);
 
 	public: /* getter and setter */
 		std::string const &getType() const; // returns the materia type

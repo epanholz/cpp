@@ -7,11 +7,11 @@ class Cure : public AMateria {
 
 	public: /* constructors and deconstructors */
 		Cure();
-		Cure(const Cure &old_obj);
+		Cure(const Cure &rhs);
 		virtual ~Cure();
 
 	public: /* copy assignment operator overload */
-		Cure& operator=(const Cure &old_obj);
+		Cure& operator=(const Cure &rhs);
 
 	public: /* getter and setter */
 
