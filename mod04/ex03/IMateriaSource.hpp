@@ -9,7 +9,7 @@
 class IMateriaSource {
 
 	public: /* deconstructors */
-		virtual ~IMateriaSource();
+		virtual ~IMateriaSource() {}
 
 	public: /* member functions */
 		virtual void learnMateria(AMateria*) = 0;

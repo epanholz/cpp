@@ -23,7 +23,9 @@ class Character : public ICharacter {
         void use(int idx, ICharacter& target);
 
     private: /* attributes */
-        AMateria*   inventory[4];
-        std::string name;
+        AMateria*       _inventory[4];
+        AMateria**      _unequipped;
+        int             _unequipped_size;
+        std::string     _name;
 
 };

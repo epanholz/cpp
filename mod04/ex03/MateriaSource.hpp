@@ -16,9 +16,10 @@ class MateriaSource : public IMateriaSource {
     public: /* getter and setter */
 
     public: /* member functions */
-        void        learnMateria(AMateria*);
-        AMateria*  createMateria(std::string const & type);
+        void        learnMateria(AMateria* materia);
+        AMateria*   createMateria(std::string const & type);
 
     private: /* attributes */
+        AMateria*   _materia[4];
 
 };

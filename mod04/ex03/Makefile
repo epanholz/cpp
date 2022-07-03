@@ -6,7 +6,7 @@ NAME :=	materia
 
 INC := AMateria.hpp ICharacter.hpp Cure.hpp Ice.hpp IMateriaSource.hpp Character.hpp MateriaSource.hpp
 
-FLAGS := -Wall -Wextra -Werror -std=c++98
+FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRC := main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 

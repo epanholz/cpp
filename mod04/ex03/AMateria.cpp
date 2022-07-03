@@ -25,4 +25,3 @@ AMateria& AMateria::operator=(const AMateria &rhs) {
 std::string const &AMateria::getType() const {
     return (this->type);
 }
-

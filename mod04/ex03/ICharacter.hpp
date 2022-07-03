@@ -10,7 +10,7 @@ class AMateria;
 
 class ICharacter {
 	public: /* deconstructors */
-		virtual ~ICharacter();
+		virtual ~ICharacter() {}
 
 	public: /* getter and setter */
 		virtual std::string const & getName() const = 0;
