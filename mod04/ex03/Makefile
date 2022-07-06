@@ -6,7 +6,7 @@ NAME :=	materia
 
 INC := AMateria.hpp ICharacter.hpp Cure.hpp Ice.hpp IMateriaSource.hpp Character.hpp MateriaSource.hpp
 
-FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic
+FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
 
 SRC := main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 
@@ -16,7 +16,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(RED) \n ┌───────────────┐\n │ \xe2\x99\xa5 compiling \xe2\x99\xa5 │\n └───────────────┘\n$(RES)"
-	@g++ -fsanitize=address $(FLAGS) -o $(NAME) $(SRC)
+	@g++ $(FLAGS) -o $(NAME) $(SRC)
 
 clean:
 	@echo "$(RED) \n ┌──────────────────────┐\n │     \xe2\x99\xa5 make clean \xe2\x99\xa5   │\n └──────────────────────┘\n$(RES)$(BLU)"

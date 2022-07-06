@@ -9,9 +9,9 @@ Character::Character(std::string const &name)
     : _name(name) {
 		for (int i = 0; i < 4; i++) 
 			this->_inventory[i] = NULL;
-		this->_unequipped = new AMateria*[64];
-		this->_unequipped_size = 64;
-		for (int j = 0; j < 64; j++) 
+		this->_unequipped_size = 2;
+		this->_unequipped = new AMateria*[this->_unequipped_size];
+		for (int j = 0; j < this->_unequipped_size; j++) 
 			this->_unequipped[j] = NULL;
 	}
 
@@ -66,9 +66,28 @@ void	Character::equip(AMateria* m) {
 	}
 }
 
+void	Character::handle_unequip(int idx) {
+	for (int i = 0; i < this->_unequipped_size; i++) {
+		if (this->_unequipped[i] == NULL) {
+			this->_unequipped[i] = this->_inventory[idx];
+			return ;
+		}
+	}
+	int new_size = this->_unequipped_size * 2;
+	AMateria** new_unequipped = new AMateria*[new_size];
+	for (int i = 0; i < new_size; i++)
+		new_unequipped[i] = NULL;
+	for (int i = 0; i < this->_unequipped_size; i++)
+		new_unequipped[i] = this->_unequipped[i];
+	delete[] this->_unequipped;
+	this->_unequipped = new_unequipped;
+	this->_unequipped_size = new_size;
+}
+
 void	Character::unequip(int idx) {
 	if (idx < 4 && idx >= 0) {
 		if (this->_inventory[idx] != NULL) {
+			this->handle_unequip(idx);
 			std::cout << "* " << this->getName() << " unequippd the materia " << this->_inventory[idx]->getType() << " *" << std::endl;
 			this->_inventory[idx] = NULL;
 		}
