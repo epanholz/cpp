@@ -24,6 +24,7 @@ class Bureaucrat {
     public: /* member functions */
 		void				incGrade();
 		void				decGrade();
+		void				signForm();
 
     private: /* attributes */
 		const std::string	_name;
@@ -46,5 +47,5 @@ class Bureaucrat {
 
 };
 
-std::ostream& operator<<(std::ostream& os, Bureaucrat& obj);
+std::ostream& operator<<(std::ostream& os, Bureaucrat& rhs);
 

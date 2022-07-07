@@ -50,7 +50,10 @@ void	Bureaucrat::decGrade() {
 	this->_grade++;
 }
 
+void	Bureaucrat::signForm() {}
+
 /* insertion operator overload */
+
 std::ostream& operator<<(std::ostream& os, Bureaucrat& rhs){
     return os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() ;
 }
