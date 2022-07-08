@@ -18,6 +18,8 @@ Cure& Cure::operator=(const Cure &rhs) {
     return (*this);
 }
 
+/* member functions */
+
 AMateria* Cure::clone() const {
     AMateria* tmp = new Cure();
     return (tmp);
