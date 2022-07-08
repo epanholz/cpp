@@ -5,6 +5,9 @@
 # include <fstream>
 # include <string>
 # include <exception>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -24,7 +27,7 @@ class Bureaucrat {
     public: /* member functions */
 		void				incGrade();
 		void				decGrade();
-		void				signForm();
+		void				signForm(Form& rhs);
 
     private: /* attributes */
 		const std::string	_name;
@@ -48,4 +51,3 @@ class Bureaucrat {
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& rhs);
-

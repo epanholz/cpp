@@ -7,6 +7,8 @@
 # include <exception>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form {
 
     public: /* constructors and deconstructors */
