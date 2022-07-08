@@ -27,7 +27,8 @@ class Bureaucrat {
     public: /* member functions */
 		void				incGrade();
 		void				decGrade();
-		void				signForm(AForm& rhs);
+		void				signForm(AForm& form);
+		void				executeForm(AForm const &form);
 
     private: /* attributes */
 		const std::string	_name;

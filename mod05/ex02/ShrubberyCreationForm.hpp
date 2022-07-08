@@ -13,8 +13,6 @@ class ShrubberyCreationForm : public AForm {
 	public: /* copy assignment operator overload */
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm &rhs);
 
-	public: /* getter and setter */
-
 	public: /* member functions */
 		void	executeForm() const;
 

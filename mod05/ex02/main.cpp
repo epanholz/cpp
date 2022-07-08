@@ -2,12 +2,16 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int		main(void)
 {
 	Bureaucrat a("zino", 150);
 	Bureaucrat c("angi", 1);
 	AForm* b = new ShrubberyCreationForm("home");
+	AForm* d = new RobotomyRequestForm("tree");
+	AForm* f = new PresidentialPardonForm("cat");
 
 	try {
 		a.decGrade();
@@ -24,5 +28,14 @@ int		main(void)
 	}
 	a.signForm(*b);
 	c.signForm(*b);
-	b->execute(c);
+	c.executeForm(*b);
+	a.executeForm(*b);
+	c.signForm(*d);
+	c.executeForm(*d);
+	a.executeForm(*f);
+	c.signForm(*f);
+	c.executeForm(*f);
+	delete b;
+	delete d;
+	delete f;
 }

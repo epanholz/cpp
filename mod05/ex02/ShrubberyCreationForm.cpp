@@ -21,7 +21,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 /* member functions */
 
 void	ShrubberyCreationForm::executeForm() const {
-	std::ofstream shrubberyFile(this->_file);
+	std::ofstream shrubberyFile(this->_file.c_str());
 	shrubberyFile << "          # #### ####\n";
 	shrubberyFile << "        ### \\/#|### |/####\n";
 	shrubberyFile << "       ##\\/#/ \\||/##/_/##/_#\n";
@@ -36,19 +36,3 @@ void	ShrubberyCreationForm::executeForm() const {
 	shrubberyFile << "       , -=-~{ .-^- _";
 	shrubberyFile.close();
 }
-
-
-/*
-          # #### ####
-        ### \/#|### |/####
-       ##\/#/ \||/##/_/##/_#
-     ###  \/###|/ \/ # ###
-   ##_\_#\_\## | #/###_/_####
-  ## #### # \ #| /  #### ##/##
-   __#_--###`  |{,###---###-~
-             \ }{
-              }}{
-              }}{
-        	  {{}
-        , -=-~{ .-^- _
-*/

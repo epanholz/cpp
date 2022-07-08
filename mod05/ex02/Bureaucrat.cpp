@@ -50,15 +50,26 @@ void	Bureaucrat::decGrade() {
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(AForm& rhs) {
+void	Bureaucrat::signForm(AForm& form) {
 	try {
-		rhs.beSigned(*this);
+		form.beSigned(*this);
 	}
 	catch (std::exception &e) {
-		std::cout << this->_name <<  " could not sign " << rhs.getName() << " cause the grade was too low" << std::endl;
+		std::cout << this->_name <<  " could not sign " << form.getName() << " cause the grade was too low" << std::endl;
 		return ;
 	}
-	std::cout << this->_name <<  " signed " << rhs.getName() << std::endl;
+	std::cout << this->_name <<  " signed " << form.getName() << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const &form) {
+	try {
+		form.execute(*this);
+	}
+	catch (std::exception &e) {
+		std::cout << this->_name << " could not execute " << form.getName() << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " executed " << form.getName() << std::endl;
 }
 
 /* insertion operator overload */

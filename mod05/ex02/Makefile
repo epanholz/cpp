@@ -5,11 +5,11 @@ RES = \033[0m
 
 NAME :=	bureaucrat
 
-INC := Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
+INC := Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
 
-SRC := main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC := main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

@@ -22,6 +22,7 @@ AForm::~AForm() {}
 /* copy assignment operator overload */
 
 AForm& AForm::operator=(const AForm &rhs) {
+    std::cout <<  "test" << std::endl;
     this->_sign = rhs._sign;
     return (*this);
 }
