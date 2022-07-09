@@ -15,14 +15,18 @@ AForm::AForm(const std::string name, const std::string target, int grade_sign, i
     }
 
 AForm::AForm(const AForm &rhs)
-    : _name(rhs._name), _target(rhs._target), _sign(rhs._sign) , _grade_sign(rhs._grade_sign), _grade_exec(rhs._grade_exec) {}
+    : _name(rhs._name), _target(rhs._target), _sign(rhs._sign) , _grade_sign(rhs._grade_sign), _grade_exec(rhs._grade_exec) {
+        if (rhs._grade_sign < 1 || rhs._grade_exec < 1)
+            throw GradeTooHighException();
+        if (rhs._grade_sign > 150 || rhs._grade_exec > 150)
+            throw GradeTooLowException();
+    }
 
 AForm::~AForm() {}
 
 /* copy assignment operator overload */
 
 AForm& AForm::operator=(const AForm &rhs) {
-    std::cout <<  "test" << std::endl;
     this->_sign = rhs._sign;
     return (*this);
 }

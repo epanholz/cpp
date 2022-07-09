@@ -55,7 +55,16 @@ void    Form::beSigned(Bureaucrat& rhs) {
         setSign(true);
     else   
         throw GradeTooLowException();
-    //rhs.signForm(*this);
+}
+
+/* exception stuffs */
+
+const char* Form::GradeTooHighException::what() const throw() {
+	return ("Grade is too high!");
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+    return ("Grade is too low!");
 }
 
 /* insertion operator overlaod */
