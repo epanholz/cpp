@@ -204,7 +204,30 @@ Interface -> C++ class with only pure virtual methods (i.e. without any code)
 Abstract -> C++ class with virtual methods that can be overridden, and some code, 
 but at least one pure virtual method that makes the class not instantiable.
 
-OG_unequipped = NEW array;
+== nan ==
 
+The NaN values are used to identify undefined or non-representable values for 
+floating-point elements, such as the square root of negative numbers or the 
+result of 0/0.
 
-OG_unequipped = NEW array;
+== type casting ==
+
+-> static_cast
+Is a compile time cast, does implicit conversions between types (such as int 
+to float) and it can also call explicit conversion functions 
+If you want to cast something to to a type that is illegal (like a char to an int)
+static_cast won't allow you to do it.
+static_cast < new-type > ( expression )        
+Returns a value of type new-type.
+
+-> dynamic_cast 
+dynamic_cast < new-type > ( expression )        
+new-type -> pointer to complete class type, reference to complete class type, 
+            or pointer to (optionally cv-qualified) void
+expression -> lvalue (until C++11) glvalue (since C++11) of a complete class type 
+            if new-type is a reference, prvalue of a pointer to complete class type 
+            if new-type is a pointer. 
+If the cast is successful, dynamic_cast returns a value of type new-type. If the 
+cast fails and new-type is a pointer type, it returns a null pointer of that type. 
+If the cast fails and new-type is a reference type, it throws an exception that 
+matches a handler of type std::bad_cast.
