@@ -206,6 +206,7 @@ but at least one pure virtual method that makes the class not instantiable.
 
 == nan ==
 
+Not A Number
 The NaN values are used to identify undefined or non-representable values for 
 floating-point elements, such as the square root of negative numbers or the 
 result of 0/0.
@@ -213,10 +214,9 @@ result of 0/0.
 == type casting ==
 
 -> static_cast
-Is a compile time cast, does implicit conversions between types (such as int 
-to float) and it can also call explicit conversion functions 
-If you want to cast something to to a type that is illegal (like a char to an int)
-static_cast won't allow you to do it.
+This is used for the normal/ordinary type conversion. This is also the cast 
+responsible for implicit type coersion and can also be called explicitly. 
+You should use it in cases like converting float to int, char to int, etc.
 static_cast < new-type > ( expression )        
 Returns a value of type new-type.
 
@@ -231,3 +231,6 @@ If the cast is successful, dynamic_cast returns a value of type new-type. If the
 cast fails and new-type is a pointer type, it returns a null pointer of that type. 
 If the cast fails and new-type is a reference type, it throws an exception that 
 matches a handler of type std::bad_cast.
+This cast is used for handling polymorphism. You only need to use it when 
+you're casting to a derived class. This is exclusively to be used in inheritence 
+when you cast from base class to derived class.
