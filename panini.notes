@@ -234,3 +234,9 @@ matches a handler of type std::bad_cast.
 This cast is used for handling polymorphism. You only need to use it when 
 you're casting to a derived class. This is exclusively to be used in inheritence 
 when you cast from base class to derived class.
+
+== serialization ==
+
+Serialization is a mechanism to convert an object into a sequence of bytes so 
+that it can be stored in memory. The byte stream, once created, also can be 
+streamed across a communication link to a remote receiving end.
