@@ -18,8 +18,6 @@ Conversion& Conversion::operator=(const Conversion &) {
 	return (*this);
 }
 
-/* getter abd setter */
-
 /* member functions */
 
 void    Conversion::ConvertValue() {
@@ -51,6 +49,11 @@ bool    Conversion::_IsInt() {
 }
 
 bool    Conversion::_IsFloat() {
+    if (this->_input == "-inff" || this->_input == "+inff" || this->_input == "nanf")
+    {
+        this->_input = this->_input.substr(0,4);
+        return (true);
+    }
     std::string::const_iterator it = this->_input.begin();
     if (this->_input.size() > 1 && (this->_input[0] == '-' || this->_input[0] == '+'))
         it++;
@@ -69,6 +72,8 @@ bool    Conversion::_IsFloat() {
 }
 
 bool    Conversion::_IsDouble() {
+    if (this->_input == "-inf" || this->_input == "+inf" || this->_input == "nan")
+        return (true);
     std::string::const_iterator it = this->_input.begin();
     if (this->_input.size() > 1 && (this->_input[0] == '-' || this->_input[0] == '+'))
         it++;
@@ -85,7 +90,8 @@ bool    Conversion::_IsDouble() {
 
 void    Conversion::_ConvertChar() {
     std::cout << "char: ";
-    if (this->_value > std::numeric_limits<char>::max() || this->_value < std::numeric_limits<char>::min())
+    if (this->_value > std::numeric_limits<char>::max() || this->_value < std::numeric_limits<char>::min() \
+        || this->_input == "-inf" || this->_input == "+inf" || this->_input == "nan")
         std::cout << "impossible" << std::endl;
     else if (!std::isprint(static_cast<char>(this->_value)))
         std::cout << "Non Printable" << std::endl;
@@ -95,7 +101,8 @@ void    Conversion::_ConvertChar() {
 
 void    Conversion::_ConvertInt() {
     std::cout << "int: ";
-    if (this->_value > std::numeric_limits<int>::max() || this->_value < std::numeric_limits<int>::min())
+    if (this->_value > std::numeric_limits<int>::max() || this->_value < std::numeric_limits<int>::min() \
+        || this->_input == "-inf" || this->_input == "+inf" || this->_input == "nan")
         std::cout << "impossible" << std::endl;
     else 
         std::cout << static_cast<int>(this->_value) << std::endl;
