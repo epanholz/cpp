@@ -240,3 +240,12 @@ when you cast from base class to derived class.
 Serialization is a mechanism to convert an object into a sequence of bytes so 
 that it can be stored in memory. The byte stream, once created, also can be 
 streamed across a communication link to a remote receiving end.
+
+== std::stack ==
+
+The std:: Stack class is a container adapter that gives the programmer the 
+functionality of a stack - specifically, a LIFO (last-in, first-out) data structure.
+
+The class template acts as a wrapper to the underlying container - only a 
+specific set of functions is provided. The stack pushes and pops the element 
+from the back of the underlying container, known as the top of the stack.
