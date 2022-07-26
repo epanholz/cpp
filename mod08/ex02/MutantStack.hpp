@@ -27,3 +27,4 @@ class MutantStack : public std::stack<T> {
 };
 
 //#include "MutantStack.tpp"
+//https://stackoverflow.com/questions/525365/does-stdstack-expose-iterators
