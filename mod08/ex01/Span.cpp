@@ -31,6 +31,12 @@ void    Span::addNumber(int numb) {
         throw std::exception();
 }
 
+void	Span::addRange(int size, int val) {
+	if (this->_vec.size() + size > this->_size)
+		throw std::exception();
+	this->_vec.insert(this->_vec.end(), size, val);
+}
+
 int     Span::shortestSpan() {
     if (this->_vec.size() < 2)
         throw std::exception();
@@ -46,8 +52,14 @@ int     Span::shortestSpan() {
 int    Span::longestSpan() {
     if (this->_vec.size() < 2)
         throw std::exception();
-    std::sort(this->_vec.begin(), this->_vec.end());
-    return(this->_vec.back() - this->_vec.front());
+    return(*std::max_element(this->_vec.begin(), this->_vec.end()) - *std::min_element(this->_vec.begin(), this->_vec.end()));
+}
+
+void	Span::printSort() {
+	std::sort(this->_vec.begin(), this->_vec.end());
+	for (std::vector<int>::iterator it = this->_vec.begin(); it != this->_vec.end(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
 }
 
 // std::sort, std::adjacent_difference and then std::min_element

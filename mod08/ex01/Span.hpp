@@ -21,9 +21,10 @@ class Span {
 
     public: /* member functions */
         void    addNumber(int numb);
-        //void    addRange(unsigned int start, unsigned int end);
+        void    addRange(int size, int val);
         int     shortestSpan();
         int     longestSpan();
+		void	printSort();
 
     private: /* attributes */
         unsigned int     _size;
