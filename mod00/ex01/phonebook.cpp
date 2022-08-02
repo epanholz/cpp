@@ -4,15 +4,15 @@
 Phonebook::Phonebook()
 	: _iter(0), _size(0), _max_size(8) {}
 
-bool Phonebook::isNumber(const std::string str)
-{
+Phonebook::~Phonebook() {}
+
+bool Phonebook::isNumber(const std::string str) {
     for (size_t i = 0; i < str.length(); i++)
         if (std::isdigit(str[i]) == 0) return false;
     return true;
 }
 
-void	Phonebook::print_header()
-{
+void	Phonebook::print_header() {
 	std::cout << "\033[33m" << "\n";
 	std::cout << std::right << std::setw(10) << std::setfill(' ') << "INDEX" << "|";
 	std::cout << std::right << std::setw(10) << std::setfill(' ') << "FIRSTNAME" << "|";
@@ -21,8 +21,7 @@ void	Phonebook::print_header()
 	std::cout << "\n" << "\033[0m";
 }
 
-void	Phonebook::ft_add()
-{
+void	Phonebook::ft_add() {
 	Phonebook::_iter = Phonebook::_iter >= Phonebook::_max_size ? 0 : Phonebook::_iter;
 	std::cout << "\033[36m" << "Please, enter the contacts first name: " << "\033[0m";
 	std::getline (std::cin,Phonebook::contacts[Phonebook::_iter].first_name);
@@ -38,13 +37,11 @@ void	Phonebook::ft_add()
 	Phonebook::_size = Phonebook::_size == Phonebook::_max_size ? Phonebook::_size : Phonebook::_size + 1;
 }
 
-void	Phonebook::ft_search()
-{
+void	Phonebook::ft_search() {
 	unsigned int 	index;
 	std::string 	input;
 
-	if (Phonebook::_size == 0)
-	{
+	if (Phonebook::_size == 0) {
 		std::cout << "\033[0;34m" << "Phonebook is empty\n" << "\033[0m";
 		return ;
 	}
@@ -53,21 +50,17 @@ void	Phonebook::ft_search()
 		Phonebook::contacts[i].print_index(i+1);
 	std::cout << "\n" << "\033[0;34m" << "Please enter the index you are looking for: " << "\033[0m";
 	std::getline (std::cin, input);
-	if(input.empty() || Phonebook::isNumber(input) == false || input.compare("0") == 0)
-	{
+	if(input.empty() || Phonebook::isNumber(input) == false || input.compare("0") == 0) {
 		std::cout << "Invalid index\n";
 		return ;
 	}
 	index = stoi(input);
-	if (index > Phonebook::_size)
-	{
+	if (index > Phonebook::_size) {
 		std::cout << "Invalid index\n";
 		return ;
 	}
-	for (unsigned int j = 0; j < Phonebook::_size; j++)
-	{
-		if ((index-1) == j)
-		{
+	for (unsigned int j = 0; j < Phonebook::_size; j++) {
+		if ((index-1) == j) {
 			Phonebook::contacts[j].print_contact();
 			return ;
 		}

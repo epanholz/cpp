@@ -86,6 +86,8 @@ Account::Account(int initial_deposit){
 	Account::_totalAmount = Account::_totalAmount + initial_deposit;
 	Account::_nbAccounts = Account::_nbAccounts + 1;
 	Account::_accountIndex = Account::_nbAccounts - 1;
+	Account::_nbDeposits = 0;
+	Account::_nbWithdrawals = 0;
 	std::cout << "index:" << Account::_accountIndex;
 	std::cout << ";amount:" << initial_deposit;
 	std::cout << ";created\n";

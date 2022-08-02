@@ -6,7 +6,7 @@ NAME := phonebook
 
 INC := phonebook.hpp
 
-FLAGS := -Wall -Wextra -Werror -pedantic -std=c++11
+FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
 
 SRC := main.cpp phonebook.cpp contact.cpp
 

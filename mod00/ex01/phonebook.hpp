@@ -1,6 +1,5 @@
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+# pragma once
 
 # include <iostream>
 # include <fstream>
@@ -10,38 +9,41 @@
 # include <stdlib.h>
 # include <cctype>
 
-class Contact
-{
-	public:
- 
+class Contact {
+
+	public: /* constructors and decpnstructors */
+		Contact();
+		~Contact();
+
+	public: /* member functions */
+		void	print_contact();
+		void	print_index(int i);
+
+	public:	/* attributes */	
    		std::string first_name;
 		std::string last_name;
 		std::string nick_name;
 		std::string phone_number;
 		std::string darkest_secret;
-
-		void	print_contact();
-		void	print_index(int i);
 };
 
-class Phonebook
-{
-    public:
- 
-		Contact	contacts[8];
+class Phonebook {
+    
+	public: /* constructors and decpnstructors */
+		Phonebook();
+		~Phonebook();
 
+	public: /* member functions */
 		bool 				isNumber(const std::string str);
 		void				print_header();
 		void				ft_add();
 		void				ft_search();
 
-		Phonebook();
+	public: /* attributes */
+		Contact				contacts[8];
 
-	private:
-
+	private: /* attributes */
 		unsigned int		_iter;
 		unsigned int		_size;
 		const unsigned int	_max_size;
 };
-
-#endif

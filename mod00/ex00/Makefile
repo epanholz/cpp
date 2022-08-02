@@ -4,7 +4,7 @@ RES = \033[0m
 
 NAME := megaphone
 
-FLAGS := -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
 
 SRC := megaphone.cpp
 
