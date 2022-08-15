@@ -1,6 +1,3 @@
-#include <vector>
-#include <algorithm>
-#include <functional>
 #include <iostream>
 #include <sys/time.h>
 #include <ctime>
@@ -106,6 +103,11 @@ Account::Account(void){
 
 void Account::_displayTimestamp()
 {
-	unsigned long int sec= time(NULL);
-  	std::cout << "[" << sec << "] ";
+	time_t rawtime;
+	struct tm * timeinfo;
+	char buffer [80];
+	std::time(&rawtime);
+	timeinfo = std::localtime(&rawtime);
+	std::strftime(buffer,80, "[%Y%e%m_%H%M%S]", timeinfo);
+  	std::cout << buffer;
 }
