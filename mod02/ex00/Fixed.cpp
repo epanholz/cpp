@@ -10,18 +10,20 @@ Fixed::Fixed()
 	std::cout << "Default constructor called :3" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &old_obj){
+Fixed::Fixed(const Fixed &rhs) 
+	: int_part(rhs.getRawBits()) {
 	std::cout << "Copy constructor called :D" << std::endl;
-	this->int_part = old_obj.int_part;
 }
 
 Fixed::~Fixed(){
 	std::cout << "Deconstructor called :x" << std::endl;
 }
 
+/* copy assignment operator overload */
+
 Fixed& Fixed::operator=(const Fixed &old_obj){
 	std::cout << "Copy assignment operator called ^-^" << std::endl;
-	this->int_part = old_obj.int_part;
+	this->int_part = old_obj.getRawBits();
 	return (*this);
 }
 

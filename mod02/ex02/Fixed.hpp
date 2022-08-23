@@ -48,7 +48,7 @@ public: /* min max member functions */
 	const static Fixed&	max(const Fixed& obj1, const Fixed& obj2);
 	static Fixed&		max(Fixed& obj1, Fixed& obj2);
 
-private:
+private: /* attributes */
 	int					int_part;
 	static const int	fract_bits;
 };

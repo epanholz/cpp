@@ -6,25 +6,28 @@
 
 class Fixed {
 
-public: /* constructors and deconstructors */
-	Fixed();
-	Fixed(const int value);
-	Fixed(const float value);
-	Fixed(const Fixed &obj);
-	Fixed& operator=(const Fixed &obj);
-	~Fixed();
+	public: /* constructors and deconstructors */
+		Fixed();
+		Fixed(const int value);
+		Fixed(const float value);
+		Fixed(const Fixed &obj);
+		~Fixed();
 
-public: /* setter and getter */
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+    public: /* copy assignment operator overload */
+		Fixed& operator=(const Fixed &obj);
 
-public: /* converstions */
-	float	toFloat(void) const;
-	int		toInt(void) const;
+	public: /* setter and getter */
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 
-private:
-	int					int_part;
-	static const int	fract_bits;
+	public: /* converstions */
+		float	toFloat(void) const;
+		int		toInt(void) const;
+
+	private: /* attributes */
+		int					int_part;
+		static const int	fract_bits;
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj);

@@ -5,17 +5,20 @@
 
 class Fixed {
 
-public: /* constructors and deconstructors */
-	Fixed();
-	Fixed(const Fixed &old_obj);
-	Fixed&	operator=(const Fixed &old_obj);
-	~Fixed();
+	public: /* constructors and deconstructors */
+		Fixed();
+		Fixed(const Fixed &old_obj);
+		~Fixed();
 
-public: /* setter and getter */
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+    public: /* copy assignment operator overload */
+		Fixed&	operator=(const Fixed &old_obj);
 
-private:
-	int					int_part;
-	static const int	fract_bits;
+	public: /* setter and getter */
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+
+	private: /* attributes */
+		int					int_part;
+		static const int	fract_bits;
+
 };

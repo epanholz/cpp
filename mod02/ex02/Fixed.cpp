@@ -10,19 +10,20 @@ Fixed::Fixed()
 	//std::cout << "Default constructor called :3" << std::endl;
 }
 
-Fixed::Fixed(const int value) {
+Fixed::Fixed(const int value) 
+	: int_part(value * (1 << this->fract_bits)) {
 	//std::cout << "Int constructor called" << std::endl;
 	this->int_part = value * (1 << this->fract_bits);
 }
 
-Fixed::Fixed(const float value){
+Fixed::Fixed(const float value) 
+	: int_part(std::roundf(value * (1 << this->fract_bits))) {
 	//std::cout << "Flaot constructor called" << std::endl;
-	this->int_part = roundf(value * (1 << this->fract_bits));
 }
 
-Fixed::Fixed(const Fixed &obj){
+Fixed::Fixed(const Fixed &obj) 
+	: int_part(obj.int_part) {
 	//std::cout << "Copy constructor called :D" << std::endl;
-	this->int_part = obj.int_part;
 }
 
 Fixed::~Fixed(){

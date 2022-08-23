@@ -258,9 +258,10 @@ POINTER -> is a variable that holds the memory address of another variable.
 - need to be dereferenced with a *
 - can be changed to point to any variable of the same type
 
-REFERENCE -> is an alias for an already existing variable. Once a reference is 
-            initialized to a variable.
+REFERENCE -> is an alias for an already existing variable
 - must be initialized when it is declared
 - cannot be NULL
 - can be used simply by name
 - once initialized to a variable, it cannot be changed to refer to a variable object
+
+
