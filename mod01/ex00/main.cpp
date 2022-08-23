@@ -1,8 +1,7 @@
 
 #include "Zombie.hpp"
 
-int main(void)
-{
+int main(void) {
 	Zombie *zombie;
 
 	zombie = newZombie("zino");

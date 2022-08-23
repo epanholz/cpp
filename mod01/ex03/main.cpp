@@ -15,6 +15,7 @@ int	main ( void )
 	{
 		Weapon club = Weapon("spiky club");
 		HumanB jim("Jim");
+		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("not spiky club");

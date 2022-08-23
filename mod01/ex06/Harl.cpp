@@ -22,7 +22,6 @@ int Harl::return_level(std::string level) {
 }
 
 void	Harl::complain(std::string level) {
-	//void (Harl::*pt2Function)(void) = NULL;
 
 	switch (this->return_level(level)) {
 		case eDebug:
@@ -33,6 +32,10 @@ void	Harl::complain(std::string level) {
 			(this->*func_lookup_table[eWarning].func)();
 		case eError:
 			(this->*func_lookup_table[eError].func)();
+			break ;
+		default:
+			std::cout << "Wrong input!" << std::endl;
+			return ;
     }
 }
 

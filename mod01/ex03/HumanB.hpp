@@ -5,13 +5,16 @@
 
 class HumanB {
 
-public:
-	HumanB(std::string name);
-	~HumanB();
-	void	setWeapon(Weapon& weapon);
-	void	attack( void );
+	public: /* constructors and deconstructors */
+		HumanB(std::string name);
+		~HumanB();
 
-private:
-	std::string	_name;
-	Weapon*		_weapon;
+	public: /* member functions */
+		void	setWeapon(Weapon& weapon);
+		void	attack( void );
+
+	private: /* attributes */
+		std::string	_name;
+		Weapon*		_weapon;
+
 };

@@ -9,7 +9,7 @@ Zombie* zombieHorde( int N, std::string name )
     // setting the name for all the Zombies
     for (int i = 0; i < N; i++) {
         zombie[i].set_name(name);
-		zombie[i].announce();
+		//zombie[i].announce();
     }
 	return(zombie);
 }

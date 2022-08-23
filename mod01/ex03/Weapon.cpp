@@ -1,13 +1,16 @@
 
 #include "Weapon.hpp"
 
+/* constructors and deconstructors */
+
 Weapon::Weapon(){}
 
-Weapon::Weapon(std::string type){
-	Weapon::_type = type;
-};
+Weapon::Weapon(std::string type)
+	: _type (type) {}
 
-Weapon::~Weapon(){};
+Weapon::~Weapon(){}
+
+/* getter and setter */
 
 const std::string&	Weapon::getType (void) const{
 	return(Weapon::_type);

@@ -6,14 +6,16 @@
 
 class Weapon {
 
-public:
-	Weapon();
-	Weapon(std::string type);
-	~Weapon();
-	const std::string& getType( void ) const;
-	void setType(std::string type);
+	public: /* constructors and deconstructors */
+		Weapon();
+		Weapon(std::string type);
+		~Weapon();
 
-private:
-	std::string _type;
+	public: /* getter and setter */
+		const std::string& getType( void ) const;
+		void setType(std::string type);
+
+	private: /* attributes */
+		std::string _type;
 
 };

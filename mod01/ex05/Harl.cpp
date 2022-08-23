@@ -1,9 +1,13 @@
 
 #include "Harl.hpp"
 
+/* constructors and deconstructors */
+
 Harl::Harl() {}
 
 Harl::~Harl() {}
+
+/* member functions */
 
 int Harl::return_level(std::string level) {
 	static const char *levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};

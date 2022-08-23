@@ -7,17 +7,16 @@
 
 class Zombie {
 
-public:
+	public: /* constructors and deconstructors */
+		Zombie();
+		~Zombie();
 
-	Zombie(std::string name);
-	Zombie();
-	~Zombie();
-	void announce( void );
-	void set_name(std::string name);
+	public: /* member functions */
+		void announce( void );
+		void set_name(std::string name);
 
-private:
-
-	std::string _name;
+	private: /* attributes */
+		std::string _name;
 
 };
 

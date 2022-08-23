@@ -5,13 +5,15 @@
 
 class HumanA {
 
-public:
-	HumanA(std::string name, Weapon& weapon);
-	~HumanA();
-	void	attack( void );
+	public: /* constructors and deconstructors */
+		HumanA(std::string name, Weapon& weapon);
+		~HumanA();
+		
+	public: /* member functions */
+		void	attack( void );
 
-private:
-	std::string _name;
-	Weapon*		_weapon;
+	private: /* attributes */
+		std::string _name;
+		Weapon&		_weapon;
 
 };

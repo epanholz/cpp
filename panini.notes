@@ -249,3 +249,18 @@ functionality of a stack - specifically, a LIFO (last-in, first-out) data struct
 The class template acts as a wrapper to the underlying container - only a 
 specific set of functions is provided. The stack pushes and pops the element 
 from the back of the underlying container, known as the top of the stack.
+
+== difference pointer and reference ==
+
+POINTER -> is a variable that holds the memory address of another variable.
+- can be initialized to any value anytime after it is declared
+- can be assigned to point to a NULL value
+- need to be dereferenced with a *
+- can be changed to point to any variable of the same type
+
+REFERENCE -> is an alias for an already existing variable. Once a reference is 
+            initialized to a variable.
+- must be initialized when it is declared
+- cannot be NULL
+- can be used simply by name
+- once initialized to a variable, it cannot be changed to refer to a variable object
