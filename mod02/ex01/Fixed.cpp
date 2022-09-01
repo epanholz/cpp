@@ -1,8 +1,6 @@
 
 #include "Fixed.hpp"
 
-const int Fixed::fract_bits = 8;
-
 /* constructors deconstructors */
 
 Fixed::Fixed()

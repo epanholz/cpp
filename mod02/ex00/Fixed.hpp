@@ -19,6 +19,6 @@ class Fixed {
 
 	private: /* attributes */
 		int					int_part;
-		static const int	fract_bits;
+		static const int	fract_bits = 8;
 
 };

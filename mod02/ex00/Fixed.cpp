@@ -1,8 +1,6 @@
 
 #include "Fixed.hpp"
 
-const int Fixed::fract_bits = 8;
-
 /* constructors and deconstructors */
 
 Fixed::Fixed()
@@ -29,12 +27,12 @@ Fixed& Fixed::operator=(const Fixed &old_obj){
 
 /* setter and getter */
 
-int		Fixed::getRawBits( void ) const{
+int		Fixed::getRawBits(void) const{
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->int_part);
 }
 
-void	Fixed::setRawBits( int const raw){
+void	Fixed::setRawBits(int const raw){
 	this->int_part = raw;
 	std::cout << "setRawBits member function called" << std::endl;
 }
