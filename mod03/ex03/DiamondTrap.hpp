@@ -2,7 +2,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap {
+class DiamondTrap : virtual public FragTrap, virtual public ScavTrap {
 
 public: /* constructors and deconstructors */
 	DiamondTrap();
@@ -16,9 +16,9 @@ public: /* member functions */
 	void			whoAmI();
 
 private: /* variables */
-	std::string name;
+	std::string _name;
+
+public: /* getter */
+	std::string	getDiamondName() const;
 
 };
-
-
-

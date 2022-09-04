@@ -13,6 +13,4 @@ public: /* constructors and deconstructors */
 public: /* member functions */
 	void	highFiveGuys();
 
-private: /* variables */
-
 };

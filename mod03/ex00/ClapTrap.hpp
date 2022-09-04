@@ -6,21 +6,32 @@
 
 class ClapTrap {
 
-public: /* constructors and deconstructors */
-	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap &old_obj);
-	ClapTrap& operator=(const ClapTrap &old_obj);
-	~ClapTrap();
+	public: /* constructors and deconstructors */
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &old_obj);
+		~ClapTrap();
 
-public: /* member functions */
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	public: /* copy assignment operator overload */	
+		ClapTrap& operator=(const ClapTrap &old_obj);
 
-private: /* variables */
-	std::string		name;
-	unsigned int	hit_points;
-	unsigned int	energy_points;
-	unsigned int	attack_damage;
+	public: /* member functions */
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+
+	public: /* getters for testing */
+		std::string		getName() const;
+		unsigned int	getHitPoints() const;
+		unsigned int	getEnergyPoints() const;
+		unsigned int	getAttackDamage() const;
+
+	private: /* variables */
+		std::string		_name;
+		unsigned int	_hitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage;
+	
+	private: /* default constructer, since we never want to use this one */
+		ClapTrap();
+
 };

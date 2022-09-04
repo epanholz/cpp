@@ -1,35 +1,32 @@
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
-	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
 	std::cout << "ScavTrap default constructor called :x" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name){
-	this->name = name;
-	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
+ScavTrap::ScavTrap(std::string name):ClapTrap(name) {
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 	std::cout << "ScavTrap name constructor called :x" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &old_obj){
-	std::cout << "Copy constructor called :D" << std::endl;
-	this->name = old_obj.name;
-	this->hit_points = old_obj.hit_points;
-	this->energy_points = old_obj.energy_points;
-	this->attack_damage = old_obj.attack_damage;
+	std::cout << "ScavTrap Copy constructor called :D" << std::endl;
+	this->_name = old_obj._name;
+	this->_hitPoints = old_obj._hitPoints;
+	this->_energyPoints = old_obj._energyPoints;
+	this->_attackDamage = old_obj._attackDamage;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &old_obj){
-	std::cout << "Copy assignment operator called ^-^" << std::endl;
-	this->name = old_obj.name;
-	this->hit_points = old_obj.hit_points;
-	this->energy_points = old_obj.energy_points;
-	this->attack_damage = old_obj.attack_damage;
+	std::cout << "ScavTrap Copy assignment operator called ^-^" << std::endl;
+	this->_name = old_obj._name;
+	this->_hitPoints = old_obj._hitPoints;
+	this->_energyPoints = old_obj._energyPoints;
+	this->_attackDamage = old_obj._attackDamage;
 	return (*this);
 }
 
@@ -40,10 +37,14 @@ ScavTrap::~ScavTrap(){
 /* member functions */
 
 void	ScavTrap::attack(const std::string& target){
-	std::cout << "\033[0;36m" << "Viscious " << this->name << " attacks " << target << " for " << this->attack_damage << "\033[0m" << std::endl;
-	this->energy_points--;
+	if (this->getEnergyPoints() == 0 || this->getHitPoints() == 0) {
+		std::cout << "\033[0;35m" << this->_name << " has no energyPoints or hitPoints left and can't attack :c" << "\033[0m" << std::endl;
+		return ;
+	}
+	std::cout << "\033[0;35m" << "Viscious " << this->_name << " attacks " << target << " for " << this->_attackDamage << "\033[0m" << std::endl;
+	this->_energyPoints = (this->_energyPoints == 0) ? 0 : this->_energyPoints - 1;
 }
 
 void	ScavTrap::guardGate(){
-	std::cout << "\033[0;36m" << "ScavTrap " << this->name << " is now in Gate keeper mode OwO" << "\033[0m" << std::endl;
+	std::cout << "\033[0;35m" << this->_name << " is now in Gate keeper mode OwO" << "\033[0m" << std::endl;
 }

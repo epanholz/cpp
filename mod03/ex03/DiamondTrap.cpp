@@ -6,28 +6,28 @@ DiamondTrap::DiamondTrap() {
 }
 
 DiamondTrap::DiamondTrap(std::string name)
-	: ClapTrap(name), FragTrap(name), ScavTrap(name), name(name) {
-	ClapTrap::name = name+"_clap_name";
-	this->hit_points = DiamondTrap::FragTrap::hit_points;
-	this->energy_points = DiamondTrap::ScavTrap::energy_points;
-	this->attack_damage = DiamondTrap::FragTrap::attack_damage;
+	: ClapTrap(name), FragTrap(name), ScavTrap(name), _name(name) {
+	ClapTrap::_name = name+"_clap_name";
+	this->_hitPoints = DiamondTrap::FragTrap::_hitPoints;
+	this->_energyPoints = DiamondTrap::ScavTrap::_energyPoints;
+	this->_attackDamage = DiamondTrap::FragTrap::_attackDamage;
 	std::cout << "DiamondTrap name constructor called OwO" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &old_obj){
-	std::cout << "Copy constructor called :D" << std::endl;
-	this->name = old_obj.name;
-	this->hit_points = old_obj.hit_points;
-	this->energy_points = old_obj.energy_points;
-	this->attack_damage = old_obj.attack_damage;
+	std::cout << "DiamondTrap Copy constructor called :D" << std::endl;
+	this->_name = old_obj._name;
+	this->_hitPoints = old_obj._hitPoints;
+	this->_energyPoints = old_obj._energyPoints;
+	this->_attackDamage = old_obj._attackDamage;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &old_obj){
-	std::cout << "Copy assignment operator called ^-^" << std::endl;
-	this->name = old_obj.name;
-	this->hit_points = old_obj.hit_points;
-	this->energy_points = old_obj.energy_points;
-	this->attack_damage = old_obj.attack_damage;
+	std::cout << "DiamondTrap Copy assignment operator called ^-^" << std::endl;
+	this->_name = old_obj._name;
+	this->_hitPoints = old_obj._hitPoints;
+	this->_energyPoints = old_obj._energyPoints;
+	this->_attackDamage = old_obj._attackDamage;
 	return (*this);
 }
 
@@ -42,5 +42,11 @@ void	DiamondTrap::attack(const std::string& target) {
 }
 
 void	DiamondTrap::whoAmI(){
-	std::cout << "\033[0;36m" << "My name is " << this->name << " and my ClapTrap name is " << ClapTrap::name << "\033[0m" << std::endl;
+	std::cout << "\033[0;35m" << "My name is " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << "\033[0m" << std::endl;
+}
+
+/* getter */
+
+std::string DiamondTrap::getDiamondName() const {
+	return (this->_name);
 }
