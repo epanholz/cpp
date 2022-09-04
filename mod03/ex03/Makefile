@@ -6,7 +6,7 @@ NAME :=	claptrap
 
 INC := ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
-FLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+FLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address -Wshadow -Wno-shadow
 
 SRC := main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
