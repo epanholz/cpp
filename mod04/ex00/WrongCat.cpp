@@ -4,7 +4,7 @@
 /* constructors and deconstructors */
 
 WrongCat::WrongCat() 
-	: WrongAnimal("WrongCat") {
+	: WrongAnimal("Wrong Cat") {
 	std::cout << "WrongCat default constructor called =^｡ꞈ｡^=" << std::endl;
 }
 

@@ -20,8 +20,8 @@ Dog& Dog::operator=(const Dog &old_obj){
 }
 
 Dog::~Dog(){
-	std::cout << "Dog deconstructor called (❍ᴥ❍ʋ)" << std::endl;
 	delete this->brain;
+	std::cout << "Dog deconstructor called (❍ᴥ❍ʋ)" << std::endl;
 }
 
 /* member functions */

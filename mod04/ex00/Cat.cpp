@@ -8,7 +8,7 @@ Cat::Cat()
 	std::cout << "Cat default constructor called =^｡ꞈ｡^=" << std::endl;
 }
 
-Cat::Cat(const Cat &old_obj){
+Cat::Cat(const Cat &old_obj) {
 	std::cout << "Copy Cat constructor called =^｡ꞈ｡^=" << std::endl;
 	this->type = old_obj.type;
 }

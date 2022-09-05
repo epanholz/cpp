@@ -21,8 +21,8 @@ Cat& Cat::operator=(const Cat &old_obj){
 }
 
 Cat::~Cat(){
-	std::cout << "Cat deconstructor called =^｡ꞈ｡^=" << std::endl;
 	delete this->brain;
+	std::cout << "Cat deconstructor called =^｡ꞈ｡^=" << std::endl;
 }
 
 /* member functions */

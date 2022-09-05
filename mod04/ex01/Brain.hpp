@@ -6,19 +6,15 @@
 
 class Brain {
 
-public: /* constructors and deconstructors */
-	Brain();
-	Brain(const Brain &old_obj);
-	Brain& operator=(const Brain &old_obj);
-	virtual ~Brain();
+	public: /* constructors and deconstructors */
+		Brain();
+		Brain(const Brain &old_obj);
+		virtual ~Brain();
 
-public: /* getter and setter */
+	public: /* copy assignment operator overload */
+		Brain& operator=(const Brain &old_obj);
 
-
-public: /* member functions */
-
-
-private: /* attributes */
-	std::string ideas[100];
+	private: /* attributes */
+		std::string ideas[100];
 
 };

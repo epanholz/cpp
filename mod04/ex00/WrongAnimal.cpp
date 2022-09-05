@@ -4,7 +4,7 @@
 /* constructors and deconstructors */
 
 WrongAnimal::WrongAnimal() 
-	: type("meta") {
+	: type("Wrong Animal") {
 	std::cout << "WrongAnimal default constructor called :3" << std::endl;
 }
 
@@ -37,5 +37,5 @@ std::string		WrongAnimal::getType() const {
 /* member functions */
 
 void			WrongAnimal::makeSound() const{
-	std::cout << "*indistinguishable WrongAnimal sound!*" << std::endl;
+	std::cout << "*indistinguishable Wrong Animal sound!*" << std::endl;
 }

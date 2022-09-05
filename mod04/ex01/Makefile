@@ -6,7 +6,7 @@ NAME :=	animal
 
 INC := Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 
-FLAGS := -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 SRC := main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
@@ -16,7 +16,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(RED) \n ┌───────────────┐\n │ \xe2\x99\xa5 compiling \xe2\x99\xa5 │\n └───────────────┘\n$(RES)"
-	@g++ -fsanitize=address $(FLAGS) -o $(NAME) $(SRC)
+	@c++ -fsanitize=address $(FLAGS) -o $(NAME) $(SRC)
 
 clean:
 	@echo "$(RED) \n ┌──────────────────────┐\n │     \xe2\x99\xa5 make clean \xe2\x99\xa5   │\n └──────────────────────┘\n$(RES)$(BLU)"

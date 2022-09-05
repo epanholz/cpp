@@ -24,7 +24,3 @@ Brain& Brain::operator=(const Brain &old_obj){
 Brain::~Brain(){
 	std::cout << "Brain deconstructor called :3" << std::endl;
 }
-
-/* getter and setter */
-
-/* member functions */

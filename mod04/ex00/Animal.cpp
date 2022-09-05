@@ -4,7 +4,7 @@
 /* constructors and deconstructors */
 
 Animal::Animal() 
-	: type("meta") {
+	: type("Animal") {
 	std::cout << "Animal default constructor called :3" << std::endl;
 }
 

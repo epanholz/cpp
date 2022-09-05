@@ -7,19 +7,23 @@
 
 class Animal {
 
-public: /* constructors and deconstructors */
-	Animal();
-	Animal(std::string name);
-	Animal(const Animal &old_obj);
-	Animal& operator=(const Animal &old_obj);
-	virtual ~Animal();
+	public: /* constructors and deconstructors */
+		Animal();
+		Animal(std::string name);
+		Animal(const Animal &old_obj);
+		virtual ~Animal();
 
-public: /* getter and setter */
-	std::string		getType() const;
+	public: /* copy assignment operator overload */
+		Animal& operator=(const Animal &old_obj);
+		
+	public: /* getter and setter */
+		std::string		getType() const;
 
-public: /* member functions */
-	virtual void	makeSound() const;
+	public: /* member functions */
+		virtual void	makeSound() const;
 
-protected: /* attributes */
-	std::string type;
+	protected: /* attributes */
+		std::string type;
+
 };
+
