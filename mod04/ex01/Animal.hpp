@@ -10,11 +10,11 @@ class Animal {
 	public: /* constructors and deconstructors */
 		Animal();
 		Animal(std::string name);
-		Animal(const Animal &old_obj);
+		Animal(const Animal &rhs);
 		virtual ~Animal();
 
 	public: /* copy assignment operator overload */
-		Animal& operator=(const Animal &old_obj);
+		Animal& operator=(const Animal &rhs);
 		
 	public: /* getter and setter */
 		std::string		getType() const;

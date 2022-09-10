@@ -6,16 +6,22 @@
 
 class Cat : public Animal {
 
-public: /* constructors and deconstructors */
-	Cat();
-	Cat(const Cat &old_obj);
-	Cat& operator=(const Cat &old_obj);
-	virtual ~Cat();
+	public: /* constructors and deconstructors */
+		Cat();
+		Cat(const Cat &rhs);
+		virtual ~Cat();
 
-public: /* member functions */
-	void	makeSound() const;
+	public: /* copy assignment operator overload */
+		Cat& operator=(const Cat &rhs);
 
-private: /* attributes */
-	Brain*	brain;
+	public: /* member functions */
+		void			makeSound() const;
+
+	public: /* getter and setter for testing */
+		void			setIdea(int index, std::string idea);
+		std::string		getIdea(int index) const;
+
+	private: /* attributes */
+		Brain*	brain;
 
 };

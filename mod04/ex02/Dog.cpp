@@ -8,24 +8,38 @@ Dog::Dog()
 	this->brain = new Brain;
 }
 
-Dog::Dog(const Dog &old_obj){
+Dog::Dog(const Dog &rhs){
 	std::cout << "Copy Dog constructor called (❍ᴥ❍ʋ)" << std::endl;
-	this->type = old_obj.type;
-}
-
-Dog& Dog::operator=(const Dog &old_obj){
-	std::cout << "Copy Dog assignment operator called (❍ᴥ❍ʋ)" << std::endl;
-	this->type = old_obj.type;
-	return (*this);
+	this->type = rhs.type;
+	this->brain = new Brain(*rhs.brain);
 }
 
 Dog::~Dog(){
-	std::cout << "Dog deconstructor called (❍ᴥ❍ʋ)" << std::endl;
 	delete this->brain;
+	std::cout << "Dog deconstructor called (❍ᴥ❍ʋ)" << std::endl;
+}
+
+/* copy assignment operator overload */
+
+Dog& Dog::operator=(const Dog &rhs){
+	std::cout << "Copy Dog assignment operator called (❍ᴥ❍ʋ)" << std::endl;
+	this->type = rhs.type;
+	*this->brain = *rhs.brain;
+	return (*this);
 }
 
 /* member functions */
 
 void	Dog::makeSound() const{
 	std::cout << "Grrrr Bark!" << std::endl;
+}
+
+/* getter and setter for testing */
+
+void			Dog::setIdea(int index, std::string idea) {
+	this->brain->setIdea(index, idea);
+}
+
+std::string		Dog::getIdea(int index) const {
+	return (this->brain->getIdea(index));
 }

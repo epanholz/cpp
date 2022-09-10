@@ -57,6 +57,10 @@ std::string const & Character::getName() const {
 /* member functions */
 
 void	Character::equip(AMateria* m) {
+	if (!m) {
+		std::cout << this->getName() << " has nothing to equip" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++) {
 		if (this->_inventory[i] == NULL) {
 			this->_inventory[i] = m;
@@ -64,6 +68,7 @@ void	Character::equip(AMateria* m) {
 			return ;
 		}
 	}
+	std::cout << this->getName() << "'s inventory is full! Could not equip " <<  m->getType() << std::endl;
 }
 
 void	Character::handle_unequip(int idx) {
@@ -91,19 +96,27 @@ void	Character::unequip(int idx) {
 			std::cout << "* " << this->getName() << " unequippd the materia " << this->_inventory[idx]->getType() << " *" << std::endl;
 			this->_inventory[idx] = NULL;
 		}
+		else
+			std::cout << this->getName() << " has nothing to unequip" << std::endl;
 	}
+	else 
+		std::cout << this->getName() << " has nothing to unequip" << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target) {
 	if (idx < 4 && idx >= 0) {
 		if (this->_inventory[idx] != NULL)
 			this->_inventory[idx]->use(target);
+		else
+			std::cout << this->getName() << " can't find a weapon in that slot" << std::endl;
 	}
+	else
+		std::cout << this->getName() << " can't find a weapon in that slot" << std::endl;
 }
 
-/* TRASHBIN ARRAY
+/* DYNAMIC TRASHBIN ARRAY
 
-//if old trash_array if full
+if old trash_array if full
 int new_size = old_size * 2;
 int *new_array = new AMateria[new_size];
 copy old data
