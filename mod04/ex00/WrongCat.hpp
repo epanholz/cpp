@@ -7,11 +7,11 @@ class WrongCat : public WrongAnimal {
 
 	public: /* constructors and deconstructors */
 		WrongCat();
-		WrongCat(const WrongCat &old_obj);
+		WrongCat(const WrongCat &rhs);
 		virtual ~WrongCat();
 
 	public: /* copy assignment operator overload */
-		WrongCat& operator=(const WrongCat &old_obj);
+		WrongCat& operator=(const WrongCat &rhs);
 		
 	public: /* member functions */
 		void	makeSound() const;

@@ -6,7 +6,7 @@ NAME :=	animal
 
 INC := Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 
-FLAGS := -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+FLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC := main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 

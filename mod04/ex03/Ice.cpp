@@ -14,6 +14,8 @@ Ice::~Ice() {}
 /* copy assignment operator overload */
 
 Ice& Ice::operator=(const Ice &rhs) {
+    if (this == &rhs)
+       return (*this);
     this->type = rhs.type;
     return (*this);
 }

@@ -8,14 +8,16 @@ Cat::Cat()
 	std::cout << "Cat default constructor called =^｡ꞈ｡^=" << std::endl;
 }
 
-Cat::Cat(const Cat &old_obj) {
+Cat::Cat(const Cat &rhs) {
 	std::cout << "Copy Cat constructor called =^｡ꞈ｡^=" << std::endl;
-	this->type = old_obj.type;
+	this->type = rhs.type;
 }
 
-Cat& Cat::operator=(const Cat &old_obj){
+Cat& Cat::operator=(const Cat &rhs){
 	std::cout << "Copy Cat assignment operator called =^｡ꞈ｡^=" << std::endl;
-	this->type = old_obj.type;
+	if(this == &rhs)
+       return (*this);
+	this->type = rhs.type;
 	return (*this);
 }
 

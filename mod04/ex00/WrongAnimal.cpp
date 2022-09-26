@@ -13,14 +13,16 @@ WrongAnimal::WrongAnimal(std::string type)
 	std::cout << "WrongAnimal type constructor called :3" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &old_obj){
+WrongAnimal::WrongAnimal(const WrongAnimal &rhs){
 	std::cout << "Copy constructor called :D" << std::endl;
-	this->type = old_obj.type;
+	this->type = rhs.type;
 }
 
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal &old_obj){
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &rhs){
 	std::cout << "Copy assignment operator called ^-^" << std::endl;
-	this->type = old_obj.type;
+	if (this == &rhs)
+       return (*this);
+	this->type = rhs.type;
 	return (*this);
 }
 

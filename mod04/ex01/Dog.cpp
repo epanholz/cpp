@@ -23,6 +23,8 @@ Dog::~Dog(){
 
 Dog& Dog::operator=(const Dog &rhs){
 	std::cout << "Copy Dog assignment operator called (❍ᴥ❍ʋ)" << std::endl;
+	if (this == &rhs)
+       return (*this);
 	this->type = rhs.type;
 	*this->brain = *rhs.brain;
 	return (*this);

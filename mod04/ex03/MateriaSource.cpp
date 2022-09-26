@@ -27,6 +27,8 @@ MateriaSource::~MateriaSource() {
 /* copy assignment operator overload */
 
 MateriaSource&			MateriaSource::operator=(const MateriaSource &rhs) {
+	if (this == &rhs)
+       return (*this);
 	for (int j = 0; j < 4; j++)
 		delete this->_materia[j];
 	for (int i = 0; i < 4; i++) {

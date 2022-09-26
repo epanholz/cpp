@@ -16,6 +16,8 @@ AMateria::~AMateria() {}
 /* copy assignment operator overload */
 
 AMateria& AMateria::operator=(const AMateria &rhs) {
+    if (this == &rhs)
+       return (*this);
     this->type = rhs.type;
     return (*this);
 }

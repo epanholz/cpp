@@ -14,6 +14,8 @@ Cure::~Cure() {}
 /* copy assignment operator overload */
 
 Cure& Cure::operator=(const Cure &rhs) {
+    if (this == &rhs)
+       return (*this);
     this->type = rhs.type;
     return (*this);
 }

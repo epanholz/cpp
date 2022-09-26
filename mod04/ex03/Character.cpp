@@ -36,6 +36,8 @@ Character::~Character() {
 /* copy assignment operator overload */
 
 Character&			Character::operator=(const Character &rhs) {
+	if (this == &rhs)
+       return (*this);
 	for (int j = 0; j < 4; j++)
 		delete this->_inventory[j];
 	for (int i = 0; i < 4; i++) {
@@ -105,7 +107,7 @@ void	Character::unequip(int idx) {
 
 void	Character::use(int idx, ICharacter& target) {
 	if (idx < 4 && idx >= 0) {
-		if (this->_inventory[idx] != NULL)
+		if (this->_inventory[idx] != NULL) 
 			this->_inventory[idx]->use(target);
 		else
 			std::cout << this->getName() << " can't find a weapon in that slot" << std::endl;

@@ -13,14 +13,16 @@ Animal::Animal(std::string type)
 	std::cout << "Animal type constructor called :3" << std::endl;
 }
 
-Animal::Animal(const Animal &old_obj){
+Animal::Animal(const Animal &rhs){
 	std::cout << "Copy constructor called :D" << std::endl;
-	this->type = old_obj.type;
+	this->type = rhs.type;
 }
 
-Animal& Animal::operator=(const Animal &old_obj){
+Animal& Animal::operator=(const Animal &rhs){
 	std::cout << "Copy assignment operator called ^-^" << std::endl;
-	this->type = old_obj.type;
+	if(this == &rhs)
+       return (*this);
+	this->type = rhs.type;
 	return (*this);
 }
 

@@ -8,14 +8,16 @@ WrongCat::WrongCat()
 	std::cout << "WrongCat default constructor called =^｡ꞈ｡^=" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &old_obj){
+WrongCat::WrongCat(const WrongCat &rhs){
 	std::cout << "Copy WrongCat constructor called =^｡ꞈ｡^=" << std::endl;
-	this->type = old_obj.type;
+	this->type = rhs.type;
 }
 
-WrongCat& WrongCat::operator=(const WrongCat &old_obj){
+WrongCat& WrongCat::operator=(const WrongCat &rhs){
 	std::cout << "Copy WrongCat assignment operator called =^｡ꞈ｡^=" << std::endl;
-	this->type = old_obj.type;
+	if (this == &rhs)
+       return (*this);
+	this->type = rhs.type;
 	return (*this);
 }
 

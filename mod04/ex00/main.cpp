@@ -13,16 +13,16 @@ int		main() {
 	const WrongAnimal* k = new WrongCat();
 
 	std::cout << std::endl;
+	std::cout << meta->getType() << " goes ";
+	meta->makeSound(); //will output the animal sound!
 	std::cout << i->getType() << " goes ";
 	i->makeSound(); //will output the cat sound!
 	std::cout << j->getType() << " goes ";
 	j->makeSound(); //will output the dog sound!
-	std::cout << meta->getType() << " goes ";
-	meta->makeSound();
 	std::cout << beta->getType() << " goes ";
-	beta->makeSound();
+	beta->makeSound(); //will output the wrong animal sound!
 	std::cout << k->getType() << " goes ";
-	k->makeSound();
+	k->makeSound(); //will output the wrong animal sound!
 	std::cout << std::endl;
 
 	delete meta;

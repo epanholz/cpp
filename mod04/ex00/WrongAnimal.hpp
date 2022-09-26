@@ -9,11 +9,11 @@ class WrongAnimal {
 	public: /* constructors and deconstructors */
 		WrongAnimal();
 		WrongAnimal(std::string name);
-		WrongAnimal(const WrongAnimal &old_obj);
+		WrongAnimal(const WrongAnimal &rhs);
 		virtual ~WrongAnimal();
 
 	public: /* copy assignment operator overload */
-		WrongAnimal& operator=(const WrongAnimal &old_obj);
+		WrongAnimal& operator=(const WrongAnimal &rhs);
 		
 	public: /* getter and setter */
 		std::string		getType() const;

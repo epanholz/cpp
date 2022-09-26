@@ -7,14 +7,16 @@ Dog::Dog()
 	std::cout << "Dog default constructor called (❍ᴥ❍ʋ)" << std::endl;
 }
 
-Dog::Dog(const Dog &old_obj){
+Dog::Dog(const Dog &rhs){
 	std::cout << "Copy Dog constructor called (❍ᴥ❍ʋ)" << std::endl;
-	this->type = old_obj.type;
+	this->type = rhs.type;
 }
 
-Dog& Dog::operator=(const Dog &old_obj){
+Dog& Dog::operator=(const Dog &rhs){
 	std::cout << "Copy Dog assignment operator called (❍ᴥ❍ʋ)" << std::endl;
-	this->type = old_obj.type;
+	if (this == &rhs)
+       return (*this);
+	this->type = rhs.type;
 	return (*this);
 }
 

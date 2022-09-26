@@ -24,6 +24,8 @@ Cat::~Cat(){
 
 Cat& Cat::operator=(const Cat &rhs){
 	std::cout << "Copy Cat assignment operator called =^｡ꞈ｡^=" << std::endl;
+	if (this == &rhs)
+       return (*this);
 	this->type = rhs.type;
 	*this->brain = *rhs.brain;
 	return (*this);
