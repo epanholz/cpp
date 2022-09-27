@@ -21,5 +21,5 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 /* member functions */
 
 void    PresidentialPardonForm::executeForm() const {
-    std::cout << this->getTaget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

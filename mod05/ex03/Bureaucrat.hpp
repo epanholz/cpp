@@ -11,43 +11,40 @@ class AForm;
 
 class Bureaucrat {
 
-    public: /* constructors and deconstructors */
+    public: 
+	/* constructors and deconstructors */
         Bureaucrat();
         Bureaucrat(std::string const &name, int grade);
         Bureaucrat(const Bureaucrat &rhs);
         virtual ~Bureaucrat();
 
-    public: /* copy assignment operator overload */
+    /* copy assignment operator overload */
         Bureaucrat& operator=(const Bureaucrat &rhs);
 
-    public: /* getter and setter */
-		const std::string	getName() const;
-		int					getGrade() const;
+    /* getter and setter */
+		const std::string	&getName() const;
+		const int			&getGrade() const;
 
-    public: /* member functions */
+    /* member functions */
 		void				incGrade();
 		void				decGrade();
 		void				signForm(AForm& form);
 		void				executeForm(AForm const &form);
 
-    private: /* attributes */
+    private: 
+	/* attributes */
 		const std::string	_name;
 		int					_grade;
 	
-	private: /* exception class */
+	/* exception class */
 	class GradeTooHighException : public std::exception {
-		
-		const char* what() const throw() {
-			return "Grade is too high!";
-		}
+		const char* what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception {
-		
-		const char* what() const throw() {
-			return "Grade is too low!";
-		}
+		const char* what() const throw();
 	};
+	
 
 };
 

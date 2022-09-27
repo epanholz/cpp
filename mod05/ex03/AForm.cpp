@@ -15,41 +15,38 @@ AForm::AForm(const std::string name, const std::string target, int grade_sign, i
     }
 
 AForm::AForm(const AForm &rhs)
-    : _name(rhs._name), _target(rhs._target), _sign(rhs._sign) , _grade_sign(rhs._grade_sign), _grade_exec(rhs._grade_exec) {
-        if (rhs._grade_sign < 1 || rhs._grade_exec < 1)
-            throw GradeTooHighException();
-        if (rhs._grade_sign > 150 || rhs._grade_exec > 150)
-            throw GradeTooLowException();
-    }
+    : _name(rhs._name), _target(rhs._target), _sign(rhs._sign) , _grade_sign(rhs._grade_sign), _grade_exec(rhs._grade_exec) {}
 
 AForm::~AForm() {}
 
 /* copy assignment operator overload */
 
 AForm& AForm::operator=(const AForm &rhs) {
+    if (this == &rhs)
+       return (*this);
     this->_sign = rhs._sign;
     return (*this);
 }
 
 /* getter and setter */
 
-const std::string AForm::getName() const {
+const std::string   &AForm::getName() const {
     return (this->_name);
 }
 
-const std::string AForm::getTaget() const {
+const std::string   &AForm::getTarget() const {
     return (this->_target);
 }
 
-bool    AForm::getSign() const {
+const bool          &AForm::getSign() const {
     return (this->_sign);
 }
 
-int   AForm::getGradeSign() const {
+const int           &AForm::getGradeSign() const {
     return (this->_grade_sign);
 }
 
-int   AForm::getGradeExec() const {
+const int           &AForm::getGradeExec() const {
     return (this->_grade_exec);
 }
 

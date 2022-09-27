@@ -16,21 +16,25 @@ struct internTable {
 
 class Intern {
 
-    public: /* constructors and deconstructors */
+    public: 
+    /* constructors and deconstructors */
         Intern();
         Intern(const Intern &);
         virtual ~Intern();
 
-    public: /* copy assignment operator overload */
+    /* copy assignment operator overload */
         Intern& operator=(const Intern &);
 
-    public: /* member functions */
+    /* member functions */
+        AForm*  makeForm(std::string name, std::string target);
+    
+    private: 
+    // memebr functions // 
         AForm*  makeRobtomy(std::string target);
         AForm*  makePardon(std::string target);
         AForm*  makeShrubbery(std::string target);
-        AForm*  makeForm(std::string name, std::string target);
-    
-    private: /* lookup table */
+
+    /* lookup table */
         const static internTable     lookupTable[3];
     
 };

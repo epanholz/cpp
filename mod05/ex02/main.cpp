@@ -13,19 +13,25 @@ int		main(void)
 	AForm* d = new RobotomyRequestForm("tree");
 	AForm* f = new PresidentialPardonForm("cat");
 
+	std::cout << "--- decrement execption ---" << std::endl;
 	try {
 		a.decGrade();
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << a << std::endl;
+	std::cout << std::endl;
+	
+	std::cout << "--- beSigned exception ---" << std::endl;
 	try {
 		b->beSigned(a);
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << std::endl;
+
+	std::cout << "--- signing/executing forms ---" << std::endl;
 	a.signForm(*b);
 	c.signForm(*b);
 	c.executeForm(*b);

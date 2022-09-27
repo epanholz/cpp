@@ -23,11 +23,11 @@ class AForm {
         AForm& operator=(const AForm &rhs);
 
     public: /* getter and setter */
-        const std::string   getName() const;
-        const std::string   getTaget() const;
-        bool                getSign() const;
-        int                 getGradeSign() const;
-        int                 getGradeExec() const;
+        const std::string   &getName() const;
+        const std::string   &getTarget() const;
+        const bool          &getSign() const;
+        const int           &getGradeSign() const;
+        const int           &getGradeExec() const;
         void                setSign(bool rhs);
 
     public: /* member functions */

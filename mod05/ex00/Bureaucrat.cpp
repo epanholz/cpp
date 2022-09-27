@@ -21,18 +21,19 @@ Bureaucrat::~Bureaucrat() {}
 /* copy assignment operator overload */
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs) {
-	//this->_name = rhs._name;
+	if (this == &rhs)
+       return (*this);
 	this->_grade = rhs._grade;
 	return (*this);
 }
 
 /* getter abd setter */
 
-const std::string	Bureaucrat::getName() {
+const std::string	&Bureaucrat::getName() const {
 	return (this->_name);
 }
 
-int	Bureaucrat::getGrade() {
+const int			&Bureaucrat::getGrade() const {
 	return (this->_grade);
 }
 
@@ -49,6 +50,17 @@ void	Bureaucrat::decGrade() {
 		throw GradeTooLowException();
 	this->_grade++;
 }
+
+/* exception stuffs */
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+	return ("Grade is too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return ("Grade is too low!");
+}
+
 
 /* insertion operator overload */
 std::ostream& operator<<(std::ostream& os, Bureaucrat& rhs){

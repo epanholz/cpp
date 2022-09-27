@@ -22,25 +22,27 @@ Form::~Form() {}
 /* copy assignment operator overload */
 
 Form& Form::operator=(const Form &rhs) {
+    if (this == &rhs)
+       return (*this);
     this->_sign = rhs._sign;
     return (*this);
 }
 
 /* getter and setter */
 
-const std::string Form::getName() {
+const std::string   &Form::getName() const {
     return (this->_name);
 }
 
-bool    Form::getSign() {
+const bool          &Form::getSign() const {
     return (this->_sign);
 }
 
-int   Form::getGradeSign() {
+const int           &Form::getGradeSign() const {
     return (this->_grade_sign);
 }
 
-int   Form::getGradeExec() {
+const int           &Form::getGradeExec() const {
     return (this->_grade_exec);
 }
 

@@ -7,7 +7,7 @@ NAME :=	bureaucrat
 
 INC := Bureaucrat.hpp
 
-FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
+FLAGS := -Wall -Wextra -Werror -std=c++98 
 
 SRC := main.cpp Bureaucrat.cpp
 
@@ -17,7 +17,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(RED) \n ┌───────────────┐\n │ \xe2\x99\xa5 compiling \xe2\x99\xa5 │\n └───────────────┘\n$(RES)"
-	@g++ $(FLAGS) -o $(NAME) $(SRC)
+	@c++ $(FLAGS) -o $(NAME) $(SRC)
 
 clean:
 	@echo "$(RED) \n ┌──────────────────────┐\n │     \xe2\x99\xa5 make clean \xe2\x99\xa5   │\n └──────────────────────┘\n$(RES)$(BLU)"
