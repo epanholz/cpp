@@ -11,21 +11,23 @@
 
 class Conversion {
 
-    public: /* constructors and deconstructors */
+    public: 
+    /* constructors and deconstructors */
         Conversion();
         Conversion(std::string input);
         Conversion(const Conversion &);
-        virtual ~Conversion();
+        ~Conversion();
 
-    public: /* copy assignment operator overload */
+    /* copy assignment operator overload */
         Conversion& operator=(const Conversion &);
 
-    public: /* getter and setter */
+    /* getter and setter */
 
-    public: /* member functions */
+    /* member functions */
         void    ConvertValue();
 
-    private: /* member functions */
+    private: 
+    /* member functions */
         bool    _IsChar();
         bool    _IsInt();
         bool    _IsFloat();
@@ -35,7 +37,7 @@ class Conversion {
         void    _ConvertFloat();
         void    _ConvertDouble();
 
-    private: /* attributes */
+    /* attributes */
     std::string     _input;
     double          _value;
 

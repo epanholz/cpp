@@ -2,10 +2,7 @@
 # pragma once
 
 # include <iostream>
-# include <fstream>
 # include <string>
-# include <stdint.h>
-# include <ctype.h>
 
 struct Data {
     std::string     data;
@@ -13,22 +10,22 @@ struct Data {
 
 class Serialization {
 
-    public: /* constructors and deconstructors */
+    public:
+    /* constructors and deconstructors */
         Serialization();
         Serialization(const Serialization &);
         virtual ~Serialization();
 
-    public: /* copy assignment operator overload */
+    /* copy assignment operator overload */
         Serialization& operator=(const Serialization &);
 
-    public: /* getter and setter */
+    /*
+    uintptr_t
+    unsigned integer type capable of holding a pointer to void
+    */
 
-    public: /* member functions */
+    /* member functions */
         uintptr_t   serialize(Data* ptr);
         Data*       deserialize(uintptr_t raw);
-
-    private: /* member functions */
-
-    private: /* attributes */
 
 };

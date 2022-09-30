@@ -25,9 +25,9 @@ template <typename T> Array<T>::~Array() {
 /* copy assignment operator overload */
 
 template <typename T> Array<T>& Array<T>::operator=(const Array &rhs) {
-    this->_size = rhs.size();
-    for (unsigned int i = 0; i < rhs.size(); i++) {
-        this->_array[i] = rhs[i];
+    if (this->_size == rhs._size) {
+        for (unsigned int i = 0; i < rhs.size(); i++)
+            this->_array[i] = rhs[i];
     }
     return (*this);
 }

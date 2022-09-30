@@ -17,6 +17,16 @@ Base*   Base::generate(void) {
     return (ret);
 }
 
+/*
+    dynamic_cast
+    Can only be used with pointers and references to classes (or with void*). 
+    Its purpose is to ensure that the result of the type conversion points 
+    to a valid complete object of the destination pointer type.
+
+    When dynamic_cast cannot cast a pointer because it is not a complete 
+    object of the required class it returns a null pointer to indicate the failure. 
+*/
+
 void    Base::identify(Base *p) {
     if (dynamic_cast<A*>(p) != NULL)
         std::cout << "Actual type is Class A" << std::endl;
@@ -25,6 +35,11 @@ void    Base::identify(Base *p) {
     else if (dynamic_cast<C*>(p) != NULL)
         std::cout << "Actual type is Class C" << std::endl;
 }
+
+/*
+    If dynamic_cast is used to convert to a reference type and the conversion is not 
+    possible, an exception of type bad_cast is thrown instead.
+*/
 
 void    Base::identify(Base &p) {
     try  {

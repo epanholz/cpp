@@ -150,6 +150,14 @@ It's a dispatch table for all the virtual methods.
 Polymorphism in C++ means, the same entity (function or object) behaves 
 differently in different scenarios.
 
+The word polymorphism means having many forms. Typically, polymorphism occurs when there 
+is a hierarchy of classes and they are related by inheritance.
+
+C++ polymorphism means that a call to a member function will cause a different function 
+to be executed depending on the type of object that invokes the function
+
+Function Overloading && Operator Overloading are polymorphism!
+
 Consider this example:
 The “ +” operator in c++ can perform two specific functions at two different 
 scenarios i.e when the “+” operator is used in numbers, it performs addition.

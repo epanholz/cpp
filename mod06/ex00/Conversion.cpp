@@ -88,6 +88,16 @@ bool    Conversion::_IsDouble() {
     return (!this->_input.empty() && it == this->_input.end());
 }
 
+/*
+    static_cast 
+    Can perform conversions between pointers to related classes, 
+    not only upcasts (from pointer-to-derived to pointer-to-base), but also downcasts 
+    (from pointer-to-base to pointer-to-derived). No checks are performed during 
+    runtime to guarantee that the object being converted is in fact a full object of 
+    the destination type. Therefore, it is up to the programmer to ensure that the 
+    conversion is safe.
+*/
+
 void    Conversion::_ConvertChar() {
     std::cout << "char: ";
     if (this->_value > std::numeric_limits<char>::max() || this->_value < std::numeric_limits<char>::min() \
@@ -110,10 +120,10 @@ void    Conversion::_ConvertInt() {
 
 void    Conversion::_ConvertFloat() {
     std::cout << "float: ";
-    std::cout << std::setprecision(2) << std::fixed << static_cast<float>(this->_value) << "f" << std::endl;
+    std::cout << std::setprecision(1) << std::fixed << static_cast<float>(this->_value) << "f" << std::endl;
 }
 
 void    Conversion::_ConvertDouble() {
     std::cout << "double: ";
-    std::cout << std::setprecision(2) << std::fixed <<  static_cast<double>(this->_value) << std::endl;
+    std::cout << std::setprecision(1) << std::fixed <<  static_cast<double>(this->_value) << std::endl;
 }

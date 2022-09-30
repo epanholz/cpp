@@ -2,10 +2,6 @@
 # pragma once
 
 # include <iostream>
-# include <fstream>
-# include <string>
-# include <stdint.h>
-# include <ctype.h>
 
 class Base {
 

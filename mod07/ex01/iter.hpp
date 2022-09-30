@@ -16,4 +16,5 @@ void    add(T &value) {
     value = value + 1;
 }
 
+// instantiated function template
 template void add<int>(int &value);
