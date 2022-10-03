@@ -3,7 +3,8 @@
 
 /* constructors and deconstructors */
 
-Span::Span() {}
+Span::Span() 
+    :_size(0) {}
 
 Span::Span(unsigned int size) 
     : _size(size) {
@@ -18,6 +19,8 @@ Span::~Span() {}
 /* copy assignment operator overload */
 
 Span&   Span::operator=(const Span &rhs) {
+    if (this == &rhs)
+       return (*this);
     this->_vec = rhs._vec;
     return (*this);
 }
@@ -25,7 +28,7 @@ Span&   Span::operator=(const Span &rhs) {
 /* member functions */
 
 void    Span::addNumber(int numb) {
-    if (this->_vec.size() < this->_size)
+    if (this->_size != 0 && (this->_vec.size() < this->_size))
         this->_vec.push_back(numb);
     else
         throw std::exception();
@@ -56,10 +59,12 @@ int    Span::longestSpan() {
 }
 
 void	Span::printSort() {
-	std::sort(this->_vec.begin(), this->_vec.end());
-	for (std::vector<int>::iterator it = this->_vec.begin(); it != this->_vec.end(); ++it)
-		std::cout << *it << " ";
-	std::cout << std::endl;
+    if (this->_vec.size() > 1) {
+        std::sort(this->_vec.begin(), this->_vec.end());
+        for (std::vector<int>::iterator it = this->_vec.begin(); it != this->_vec.end(); ++it)
+            std::cout << *it << " ";
+        std::cout << std::endl;
+    }
 }
 
 // std::sort, std::adjacent_difference and then std::min_element

@@ -1,23 +1,41 @@
 
 #include "easyfind.hpp"
 #include <vector> 
-#include <array>
-#include <map>
+#include <list>
+#include <deque>
+
+/*
+the 3 container types that are not associative in c++98 are
+vector, list and deque
+*/ 
 
 int     main() {
     std::vector<int> myVec;
-    std::array<int,3> myArr = {1, 2, 3};
-    myVec.push_back(1);
-    myVec.push_back(2);
-    myVec.push_back(3);
+    std::list<int> myList;
+    std::deque<int> myDeque;
+
+    for (int i = 0; i < 5; i++) {
+        myList.push_back(i);
+        myVec.push_back(i);
+        myDeque.push_back(i);
+    }
+
     try {
         ::easyfind(myVec, 4);
     }
     catch (const std::exception& e) {
         std::cout << e.what() << std::endl;
-    }    
+    }  
+
     try {
-        ::easyfind(myArr, 2);
+        ::easyfind(myList, 6);
+    }
+    catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+
+    try {
+        ::easyfind(myDeque, 3);
     }
     catch (const std::exception& e) {
         std::cout << e.what() << std::endl;
